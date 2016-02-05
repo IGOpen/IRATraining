@@ -1,0 +1,29 @@
+extends ../shared/layout
+block main-content
+    .container
+        .row
+            h3 Path: #{path}
+        .row: .col-md-6
+            a(href="/files/#{urlSafeParentPath}").btn.btn-default GO UP
+            if (currentUser)
+                a(href="/upload-form/#{urlSafePath}").btn.btn-default UPLOAD
+            table.table.table-bordered.table-striped
+                    tr
+                        th
+                            | Name
+                        th
+                            | Type
+                    
+                    each dir in dirs
+                        tr
+                            td
+                                a(href="/files/#{dir.path}") #{dir.name}
+                            td
+                                | Directory
+
+                    each file in files
+                        tr
+                            td
+                                a(href="/download/#{file.path}") #{file.name}
+                            td
+                                | File

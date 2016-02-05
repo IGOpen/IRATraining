@@ -1,0 +1,21 @@
+extends ../shared/layout
+block main-content
+    form(method="post")
+        label(for="username") Username
+        input(id="username" type="text" name="username" placeholder="username" class ="form-control")
+
+        br
+
+        label(for="email") E-mail
+        input(id="email" type="email" name="email" placeholder="E-mail" class ="form-control")
+
+        br
+
+        label(for="role") Role
+        select(id="role" name="role" class ="form-control")
+            option(value="standard") Standard
+            option(value="admin") Admin
+
+        br
+
+        input(type="submit" value="Register" class="btn btn-lg")

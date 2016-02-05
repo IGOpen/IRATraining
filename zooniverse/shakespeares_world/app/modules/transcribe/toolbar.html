@@ -1,0 +1,29 @@
+<nav class="navbar navbar-transcribe navbar-static-top">
+    <div class="container-fluid">
+        <p>Author : <i>{{vm.author}}</i></p>
+        <p>Title : <i>{{vm.title}}</i></p>
+        <p><a ng-href="{{vm.catalogue}}" target="_blank">Catalogue</a></p>
+        <p><a ng-href="{{vm.original}}" target="_blank">Original</a></p>
+        <div class="controls">
+            <button type="button" class="button -tool" ng-class="{ '-active': vm.tools.crop.active, '-disabled': vm.tools.crop.disabled }" ng-click="vm.tools.crop.toggle()">
+                <span class="icon -text" aria-hidden="true"></span> Snapshot
+            </button>
+            <button type="button" class="button -tool" ng-class="{ '-active': vm.tools.text.active }" ng-click="vm.tools.text.toggle()">
+                <span class="icon -text" aria-hidden="true"></span> Transcribe Text
+            </button>
+            <button type="button" class="button -tool" ng-class="{ '-active': vm.tools.graphic.active }" ng-click="vm.tools.graphic.toggle()">
+                <span class="icon -image" aria-hidden="true"></span> Identify Graphic
+            </button>
+            <button label="Tutorial" class="button -tool" ng-click="vm.$openTutorial()">
+                <span class="icon -tutorial" aria-hidden="true"></span> Tutorial
+            </button>
+        </div>
+        <div class="title">Remember, you're not required to transcribe the whole page!</div>
+        <div class="controls">
+            <button type="button" class="button -next" ng-click="vm.$variantsAndNext()">
+                I'm done!
+            </button>
+        </div>
+
+    </div>
+</nav>

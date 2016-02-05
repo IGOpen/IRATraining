@@ -1,0 +1,55 @@
+doctype
+html
+    head
+        title WebServerXplorer
+        include css        
+    body(ng-app="myApp" ng-cloak)
+        nav.navbar.navbar-default
+            .container-fluid
+                .navbar-header
+                    button(type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false")
+                        span(class="sr-only" > Toggle navigation)
+                        span(class="icon-bar")
+                        span(class="icon-bar")
+                        span(class="icon-bar")
+                    a.navbar-brand(href="/") HOME
+                .collapse.navbar-collapse#navbar-collapse-1
+                    ul.nav.navbar-nav.navbar-right
+                        li
+                            a(href="/files") Storage
+                        if (currentUser)
+                            li.dropdown
+                                a.dropdown-toggle(href="", data-toggle="dropdown")
+                                    | #{currentUser.username}
+                                    span.caret
+                                ul.dropdown-menu
+
+                                    if(currentUser.isAdmin)
+                                        li
+                                            a(href="/admin") Admin
+                                        li
+                                            a(href="/register") Register new user
+                                        li
+                                            a(href="/admin/users") Users
+                                    li
+                                        a(href="/profile") Profile
+                                li
+                                    a(href="/logout") Logout
+                        else
+                            li
+                                a(href="/login") Login
+
+        .container
+            if (errorMessage)
+                div.alert.alert-danger !{errorMessage}
+
+            if (successMessage)
+                div.alert.alert-success !{successMessage}
+
+            block main-content
+
+        footer
+            p.text-center
+                | &copy; Telerik Academy 2014
+
+        include scripts

@@ -1,0 +1,26 @@
+$nav-link-border-size = 4px
+
+.app-header
+    @extend .navbar
+    @extend .navbar-default
+    @extend .navbar-static-top
+    background-color: dark-grey
+    border-bottom: solid #fff 1px
+    margin-bottom: 0px
+    z-index: 2
+
+
+    > .container-fluid > .navbar-header > .navbar-brand
+        font-weight: 200
+
+    > .container-fluid > .collapse > .navbar-nav > li > a
+        @media screen and (min-width: $screen-sm-min)
+            border-bottom: $nav-link-border-size solid transparent
+            color: light-grey
+            padding-bottom: $navbar-padding-vertical - $nav-link-border-size
+
+
+    > .container-fluid > .collapse > .navbar-nav > li > a.-active
+        @media screen and (min-width: $screen-sm-min)
+            border-color: green
+            color: light-grey

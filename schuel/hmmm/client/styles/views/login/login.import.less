@@ -1,0 +1,80 @@
+#loginFrame {
+	text-align: center;
+	background: @light-blue;
+	& > div:first-child {
+		margin-top: 12px;
+	}
+	h3 {
+		margin-top: 0;
+	}
+
+	button.loginLogin{
+		&.loginLoginLogin {
+            .btn-success;
+        }
+	}
+
+    button.loginRegister{
+        .form-control;
+        .btn;
+        .btn-primary;
+
+        &.registering {
+            .btn-success;
+        }
+    }
+
+	input#login-name,
+	input#login-password,
+	input#login-email {
+		.form-control-humble;
+	}
+
+    input#login-name.username_warning,
+    input#login-password.password_warning {
+        border-color: @brand-danger;
+    }
+
+    #username_warning,
+    #username_warning_not_existing,
+    #password_warning,
+    #password_warning_incorrect,
+    #login_warning {
+        color: @brand-danger;
+        margin: -10px 0 10px;
+        text-align: left;
+    }
+
+	li.dropdown-header:hover {
+		cursor: default;
+	}
+
+	.external_logins {
+        margin: 7px 0 15px;
+
+		.loginWithService {
+			background: none;
+			border: none;
+			font-size: x-large;
+			color: #aca7a7;
+
+			&:hover {
+				.fa {
+					.transition(0.5s);
+				}
+
+				.fa-google-plus-square {
+					color: #dd4b39;
+				}
+
+				.fa-facebook-square {
+					color: #3B5998;
+				}
+
+				.fa-github-square {
+					color: #333;
+				}
+			}
+		}
+    }
+}

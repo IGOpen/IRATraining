@@ -1,0 +1,105 @@
+<template name="calendar">
+	<div class="switchDate">
+		<button class="prevYear"><span class="fa fa-arrow-left"></span> 1 year</button>
+		<button class="prevMonth"><span class="fa fa-arrow-left"></span> 1 month</button>
+		<button class="prevWeek"><span class="fa fa-arrow-left"></span> 1 week</button>
+		<!--<button class="prevDay"><span class="fa fa-arrow-left"></span>1 day</button>-->
+	&nbsp; &nbsp;<nobr>{{startDate}}</nobr>&nbsp; &nbsp;
+		<div class="right">
+			<!--<button class="nextDay"><span class="fa fa-arrow-right"></span>1 day</button>-->
+			<button class="nextWeek"><span class="fa fa-arrow-right"></span> 1 week</button>
+			<button class="nextMonth"><span class="fa fa-arrow-right"></span> 1 month</button>
+			<button class="nextYear"><span class="fa fa-arrow-right"></span> 1 year</button>
+		</div>
+	</div>
+	<div class="container-fluid">
+		<div class="calendar container-fluid">
+		{{#each days}}
+			{{> calendarDay day=this filter=filter}}
+			<hr>
+		{{/each}}
+		</div>
+	</div>
+	<button class="prevYear">-1 year</button>
+	<button class="prevMonth">-1 month</button>
+	<button class="prevWeek">-1 week</button>
+	<button class="prevDay">-1 day</button>
+	until: {{endDate}}
+	<button class="nextDay">+1 day</button>
+	<button class="nextWeek">+1 week</button>
+	<button class="nextMonth">+1 month</button>
+	<button class="nextYear">+1 year</button>
+</template>
+
+<template name="calendarDay">
+	<div class="row">
+		<h1>{{calendarDay day.start}}</h1>
+		{{#unless hasEvents}}
+		{{mf 'calendar.noCoursesThisDay' "There are no courses on this day"}}
+		{{/unless}}
+	</div>
+	{{#if hasEvents}}
+	<div class="calendar_eventlist row">
+	{{#each events}}
+		{{#if past}}
+			{{> calendar_event_past}}
+		{{else}}
+			{{> calendar_event}}
+		{{/if}}
+	{{/each}}
+	</div>
+	{{/if}}
+</template>
+
+<template name="calendar_event">
+	<a href="{{pathFor 'showEvent'}}">
+		<div class="calendar_event col-xs-12 col-sm-4 col-md-3 col-lg-2 no-padding">
+			<div class="course_event_time">
+				<div style="padding-top: 0.5em">
+				<span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+				{{timeformat start}}
+				{{#if end}}
+					- {{timeformat end}}
+				{{/if}}
+				</div>
+				<div  style="height: 2em" class="ellipsis">
+				{{#if location}}
+					<span class="glyphicon glyphicon-home"></span>
+					{{this.location}}
+					{{#if room}}
+						- {{this.room}}
+					{{/if}}
+				{{/if}}
+				</div>
+			</div>
+			<div style="height: 2em" class="course_event_title ellipsis">
+				<h4>{{this.title}}</h4>
+			</div>
+			<div class="course_event_desc ellipsis">
+				<p >{{plain this.description}}</p>
+			</div>
+		</div>
+	</a>
+</template>
+
+<template name="calendar_event_past">
+	<a href="{{pathFor 'showEvent'}}">
+	  	<div class="calendar_event_past no-padding col-xs-12 col-sm-4 col-md-3 col-lg-2" style='overflow: hidden'>
+			<div class="course_event_date">
+				<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+				{{dateformat_withday start}}
+			</div>
+			<div class="course_event_time">
+				<span class="glyphicon glyphicon-time" aria-hidden="true"></span> 
+				{{timeformat start}} - {{timeformat end}} &nbsp;&nbsp;&nbsp; {{this.location}}, {{this.room}}
+			</div>
+			<div class="course_event_title">
+				<h4>{{this.title}}</h4>
+			</div>
+			<div class="course_event_desc ellipsis">
+				<p>{{plain description}}</p>
+			</div>
+			<div class="grey_out"></div>
+	  	</div>
+	</a>
+</template>

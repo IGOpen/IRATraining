@@ -1,0 +1,611 @@
+---
+layout: lite
+base_url: "./../.."
+slug: tests
+issue: 53
+---
+
+<style type="text/css">
+    table {
+        table-layout: fixed;
+    }
+
+    th {
+        padding: 2px 10px;
+        text-align: left;
+        background: red;
+        color: white;
+        border-right: 1px solid white;
+    }
+
+    td {
+        padding: 2px 10px;
+    }
+
+    th, td {
+        overflow: visible;
+    }
+
+    tr:nth-child(2n) td {
+        background: #fcfcfc;
+    }
+</style>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        var $table = $("table");
+        $table.floatThead({
+            useAbsolutePositioning: true
+        });
+        alignmentDebugger($table);
+    });
+
+</script>
+<p>
+    If the table is wider than the wrapping container, then we must set its width when the header is floated, and put it back to old style on unfloat.
+<br/>
+    currently this is still broken if using useAbsolutePositioning: false. I can check if the issue may happen by wrapping the table with a div.
+    <br/>
+    for now, wont fix since workaround exists
+</p>
+<table>
+<thead>
+<tr>
+    <th class="number">Id</th>
+    <th>Somecolumn 1</th>
+    <th>Somecolumn 2</th>
+    <th>Somecolumn 3</th>
+    <th>Some long column 4</th>
+    <th>Some long column 5</th>
+    <th>Short</th>
+    <th>Somecolumn 1</th>
+    <th>Somecolumn 2</th>
+    <th>Somecolumn 3</th>
+    <th>Some long column 4</th>
+    <th>Some long column 5</th>
+    <th>Short</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+    <td class="number">345234</td>
+    <td>Textthatislongerthanheader</td>
+    <td>Textthatisalsolongerthanheader</td>
+    <td>6</td>
+    <td>XXXXYYYY</td>
+    <td>XXXXYYYYZZZZZZ</td>
+    <td>Short</td>
+    <td>Textthatislongerthanheader</td>
+    <td>Textthatisalsolongerthanheader</td>
+    <td>6</td>
+    <td>XXXXYYYY</td>
+    <td>XXXXYYYYZZZZZZ</td>
+    <td>Short</td>
+</tr>
+<tr>
+    <td class="number">345234</td>
+    <td>Textthatislongerthanheader</td>
+    <td>Textthatisalsolongerthanheader</td>
+    <td>6</td>
+    <td>XXXXYYYY</td>
+    <td>XXXXYYYYZZZZZZ</td>
+    <td>Short</td>
+    <td>Textthatislongerthanheader</td>
+    <td>Textthatisalsolongerthanheader</td>
+    <td>6</td>
+    <td>XXXXYYYY</td>
+    <td>XXXXYYYYZZZZZZ</td>
+    <td>Short</td>
+</tr>
+<tr>
+    <td class="number">345234</td>
+    <td>Textthatislongerthanheader</td>
+    <td>Textthatisalsolongerthanheader</td>
+    <td>6</td>
+    <td>XXXXYYYY</td>
+    <td>XXXXYYYYZZZZZZ</td>
+    <td>Short</td>
+    <td>Textthatislongerthanheader</td>
+    <td>Textthatisalsolongerthanheader</td>
+    <td>6</td>
+    <td>XXXXYYYY</td>
+    <td>XXXXYYYYZZZZZZ</td>
+    <td>Short</td>
+</tr>
+<tr>
+    <td class="number">345234</td>
+    <td>Textthatislongerthanheader</td>
+    <td>Textthatisalsolongerthanheader</td>
+    <td>6</td>
+    <td>XXXXYYYY</td>
+    <td>XXXXYYYYZZZZZZ</td>
+    <td>Short</td>
+    <td>Textthatislongerthanheader</td>
+    <td>Textthatisalsolongerthanheader</td>
+    <td>6</td>
+    <td>XXXXYYYY</td>
+    <td>XXXXYYYYZZZZZZ</td>
+    <td>Short</td>
+</tr>
+<tr>
+    <td class="number">345234</td>
+    <td>Textthatislongerthanheader</td>
+    <td>Textthatisalsolongerthanheader</td>
+    <td>6</td>
+    <td>XXXXYYYY</td>
+    <td>XXXXYYYYZZZZZZ</td>
+    <td>Short</td>
+    <td>Textthatislongerthanheader</td>
+    <td>Textthatisalsolongerthanheader</td>
+    <td>6</td>
+    <td>XXXXYYYY</td>
+    <td>XXXXYYYYZZZZZZ</td>
+    <td>Short</td>
+</tr>
+<tr>
+    <td class="number">345234</td>
+    <td>Textthatislongerthanheader</td>
+    <td>Textthatisalsolongerthanheader</td>
+    <td>6</td>
+    <td>XXXXYYYY</td>
+    <td>XXXXYYYYZZZZZZ</td>
+    <td>Short</td>
+    <td>Textthatislongerthanheader</td>
+    <td>Textthatisalsolongerthanheader</td>
+    <td>6</td>
+    <td>XXXXYYYY</td>
+    <td>XXXXYYYYZZZZZZ</td>
+    <td>Short</td>
+</tr>
+<tr>
+    <td class="number">345234</td>
+    <td>Textthatislongerthanheader</td>
+    <td>Textthatisalsolongerthanheader</td>
+    <td>6</td>
+    <td>XXXXYYYY</td>
+    <td>XXXXYYYYZZZZZZ</td>
+    <td>Short</td>
+    <td>Textthatislongerthanheader</td>
+    <td>Textthatisalsolongerthanheader</td>
+    <td>6</td>
+    <td>XXXXYYYY</td>
+    <td>XXXXYYYYZZZZZZ</td>
+    <td>Short</td>
+</tr>
+<tr>
+    <td class="number">345234</td>
+    <td>Textthatislongerthanheader</td>
+    <td>Textthatisalsolongerthanheader</td>
+    <td>6</td>
+    <td>XXXXYYYY</td>
+    <td>XXXXYYYYZZZZZZ</td>
+    <td>Short</td>
+    <td>Textthatislongerthanheader</td>
+    <td>Textthatisalsolongerthanheader</td>
+    <td>6</td>
+    <td>XXXXYYYY</td>
+    <td>XXXXYYYYZZZZZZ</td>
+    <td>Short</td>
+</tr>
+<tr>
+    <td class="number">345234</td>
+    <td>Textthatislongerthanheader</td>
+    <td>Textthatisalsolongerthanheader</td>
+    <td>6</td>
+    <td>XXXXYYYY</td>
+    <td>XXXXYYYYZZZZZZ</td>
+    <td>Short</td>
+    <td>Textthatislongerthanheader</td>
+    <td>Textthatisalsolongerthanheader</td>
+    <td>6</td>
+    <td>XXXXYYYY</td>
+    <td>XXXXYYYYZZZZZZ</td>
+    <td>Short</td>
+</tr>
+<tr>
+    <td class="number">345234</td>
+    <td>Textthatislongerthanheader</td>
+    <td>Textthatisalsolongerthanheader</td>
+    <td>6</td>
+    <td>XXXXYYYY</td>
+    <td>XXXXYYYYZZZZZZ</td>
+    <td>Short</td>
+    <td>Textthatislongerthanheader</td>
+    <td>Textthatisalsolongerthanheader</td>
+    <td>6</td>
+    <td>XXXXYYYY</td>
+    <td>XXXXYYYYZZZZZZ</td>
+    <td>Short</td>
+</tr>
+<tr>
+    <td class="number">345234</td>
+    <td>Textthatislongerthanheader</td>
+    <td>Textthatisalsolongerthanheader</td>
+    <td>6</td>
+    <td>XXXXYYYY</td>
+    <td>XXXXYYYYZZZZZZ</td>
+    <td>Short</td>
+    <td>Textthatislongerthanheader</td>
+    <td>Textthatisalsolongerthanheader</td>
+    <td>6</td>
+    <td>XXXXYYYY</td>
+    <td>XXXXYYYYZZZZZZ</td>
+    <td>Short</td>
+</tr>
+<tr>
+    <td class="number">345234</td>
+    <td>Textthatislongerthanheader</td>
+    <td>Textthatisalsolongerthanheader</td>
+    <td>6</td>
+    <td>XXXXYYYY</td>
+    <td>XXXXYYYYZZZZZZ</td>
+    <td>Short</td>
+    <td>Textthatislongerthanheader</td>
+    <td>Textthatisalsolongerthanheader</td>
+    <td>6</td>
+    <td>XXXXYYYY</td>
+    <td>XXXXYYYYZZZZZZ</td>
+    <td>Short</td>
+</tr>
+<tr>
+    <td class="number">345234</td>
+    <td>Textthatislongerthanheader</td>
+    <td>Textthatisalsolongerthanheader</td>
+    <td>6</td>
+    <td>XXXXYYYY</td>
+    <td>XXXXYYYYZZZZZZ</td>
+    <td>Short</td>
+    <td>Textthatislongerthanheader</td>
+    <td>Textthatisalsolongerthanheader</td>
+    <td>6</td>
+    <td>XXXXYYYY</td>
+    <td>XXXXYYYYZZZZZZ</td>
+    <td>Short</td>
+</tr>
+<tr>
+    <td class="number">345234</td>
+    <td>Textthatislongerthanheader</td>
+    <td>Textthatisalsolongerthanheader</td>
+    <td>6</td>
+    <td>XXXXYYYY</td>
+    <td>XXXXYYYYZZZZZZ</td>
+    <td>Short</td>
+    <td>Textthatislongerthanheader</td>
+    <td>Textthatisalsolongerthanheader</td>
+    <td>6</td>
+    <td>XXXXYYYY</td>
+    <td>XXXXYYYYZZZZZZ</td>
+    <td>Short</td>
+</tr>
+<tr>
+    <td class="number">345234</td>
+    <td>Textthatislongerthanheader</td>
+    <td>Textthatisalsolongerthanheader</td>
+    <td>6</td>
+    <td>XXXXYYYY</td>
+    <td>XXXXYYYYZZZZZZ</td>
+    <td>Short</td>
+    <td>Textthatislongerthanheader</td>
+    <td>Textthatisalsolongerthanheader</td>
+    <td>6</td>
+    <td>XXXXYYYY</td>
+    <td>XXXXYYYYZZZZZZ</td>
+    <td>Short</td>
+</tr>
+<tr>
+    <td class="number">345234</td>
+    <td>Textthatislongerthanheader</td>
+    <td>Textthatisalsolongerthanheader</td>
+    <td>6</td>
+    <td>XXXXYYYY</td>
+    <td>XXXXYYYYZZZZZZ</td>
+    <td>Short</td>
+    <td>Textthatislongerthanheader</td>
+    <td>Textthatisalsolongerthanheader</td>
+    <td>6</td>
+    <td>XXXXYYYY</td>
+    <td>XXXXYYYYZZZZZZ</td>
+    <td>Short</td>
+</tr>
+<tr>
+    <td class="number">345234</td>
+    <td>Textthatislongerthanheader</td>
+    <td>Textthatisalsolongerthanheader</td>
+    <td>6</td>
+    <td>XXXXYYYY</td>
+    <td>XXXXYYYYZZZZZZ</td>
+    <td>Short</td>
+    <td>Textthatislongerthanheader</td>
+    <td>Textthatisalsolongerthanheader</td>
+    <td>6</td>
+    <td>XXXXYYYY</td>
+    <td>XXXXYYYYZZZZZZ</td>
+    <td>Short</td>
+</tr>
+<tr>
+    <td class="number">345234</td>
+    <td>Textthatislongerthanheader</td>
+    <td>Textthatisalsolongerthanheader</td>
+    <td>6</td>
+    <td>XXXXYYYY</td>
+    <td>XXXXYYYYZZZZZZ</td>
+    <td>Short</td>
+    <td>Textthatislongerthanheader</td>
+    <td>Textthatisalsolongerthanheader</td>
+    <td>6</td>
+    <td>XXXXYYYY</td>
+    <td>XXXXYYYYZZZZZZ</td>
+    <td>Short</td>
+</tr>
+<tr>
+    <td class="number">345234</td>
+    <td>Textthatislongerthanheader</td>
+    <td>Textthatisalsolongerthanheader</td>
+    <td>6</td>
+    <td>XXXXYYYY</td>
+    <td>XXXXYYYYZZZZZZ</td>
+    <td>Short</td>
+    <td>Textthatislongerthanheader</td>
+    <td>Textthatisalsolongerthanheader</td>
+    <td>6</td>
+    <td>XXXXYYYY</td>
+    <td>XXXXYYYYZZZZZZ</td>
+    <td>Short</td>
+</tr>
+<tr>
+    <td class="number">345234</td>
+    <td>Textthatislongerthanheader</td>
+    <td>Textthatisalsolongerthanheader</td>
+    <td>6</td>
+    <td>XXXXYYYY</td>
+    <td>XXXXYYYYZZZZZZ</td>
+    <td>Short</td>
+    <td>Textthatislongerthanheader</td>
+    <td>Textthatisalsolongerthanheader</td>
+    <td>6</td>
+    <td>XXXXYYYY</td>
+    <td>XXXXYYYYZZZZZZ</td>
+    <td>Short</td>
+</tr>
+<tr>
+    <td class="number">345234</td>
+    <td>Textthatislongerthanheader</td>
+    <td>Textthatisalsolongerthanheader</td>
+    <td>6</td>
+    <td>XXXXYYYY</td>
+    <td>XXXXYYYYZZZZZZ</td>
+    <td>Short</td>
+    <td>Textthatislongerthanheader</td>
+    <td>Textthatisalsolongerthanheader</td>
+    <td>6</td>
+    <td>XXXXYYYY</td>
+    <td>XXXXYYYYZZZZZZ</td>
+    <td>Short</td>
+</tr>
+<tr>
+    <td class="number">345234</td>
+    <td>Textthatislongerthanheader</td>
+    <td>Textthatisalsolongerthanheader</td>
+    <td>6</td>
+    <td>XXXXYYYY</td>
+    <td>XXXXYYYYZZZZZZ</td>
+    <td>Short</td>
+    <td>Textthatislongerthanheader</td>
+    <td>Textthatisalsolongerthanheader</td>
+    <td>6</td>
+    <td>XXXXYYYY</td>
+    <td>XXXXYYYYZZZZZZ</td>
+    <td>Short</td>
+</tr>
+<tr>
+    <td class="number">345234</td>
+    <td>Textthatislongerthanheader</td>
+    <td>Textthatisalsolongerthanheader</td>
+    <td>6</td>
+    <td>XXXXYYYY</td>
+    <td>XXXXYYYYZZZZZZ</td>
+    <td>Short</td>
+    <td>Textthatislongerthanheader</td>
+    <td>Textthatisalsolongerthanheader</td>
+    <td>6</td>
+    <td>XXXXYYYY</td>
+    <td>XXXXYYYYZZZZZZ</td>
+    <td>Short</td>
+</tr>
+<tr>
+    <td class="number">345234</td>
+    <td>Textthatislongerthanheader</td>
+    <td>Textthatisalsolongerthanheader</td>
+    <td>6</td>
+    <td>XXXXYYYY</td>
+    <td>XXXXYYYYZZZZZZ</td>
+    <td>Short</td>
+    <td>Textthatislongerthanheader</td>
+    <td>Textthatisalsolongerthanheader</td>
+    <td>6</td>
+    <td>XXXXYYYY</td>
+    <td>XXXXYYYYZZZZZZ</td>
+    <td>Short</td>
+</tr>
+<tr>
+    <td class="number">345234</td>
+    <td>Textthatislongerthanheader</td>
+    <td>Textthatisalsolongerthanheader</td>
+    <td>6</td>
+    <td>XXXXYYYY</td>
+    <td>XXXXYYYYZZZZZZ</td>
+    <td>Short</td>
+    <td>Textthatislongerthanheader</td>
+    <td>Textthatisalsolongerthanheader</td>
+    <td>6</td>
+    <td>XXXXYYYY</td>
+    <td>XXXXYYYYZZZZZZ</td>
+    <td>Short</td>
+</tr>
+<tr>
+    <td class="number">345234</td>
+    <td>Textthatislongerthanheader</td>
+    <td>Textthatisalsolongerthanheader</td>
+    <td>6</td>
+    <td>XXXXYYYY</td>
+    <td>XXXXYYYYZZZZZZ</td>
+    <td>Short</td>
+    <td>Textthatislongerthanheader</td>
+    <td>Textthatisalsolongerthanheader</td>
+    <td>6</td>
+    <td>XXXXYYYY</td>
+    <td>XXXXYYYYZZZZZZ</td>
+    <td>Short</td>
+</tr>
+<tr>
+    <td class="number">345234</td>
+    <td>Textthatislongerthanheader</td>
+    <td>Textthatisalsolongerthanheader</td>
+    <td>6</td>
+    <td>XXXXYYYY</td>
+    <td>XXXXYYYYZZZZZZ</td>
+    <td>Short</td>
+    <td>Textthatislongerthanheader</td>
+    <td>Textthatisalsolongerthanheader</td>
+    <td>6</td>
+    <td>XXXXYYYY</td>
+    <td>XXXXYYYYZZZZZZ</td>
+    <td>Short</td>
+</tr>
+<tr>
+    <td class="number">345234</td>
+    <td>Textthatislongerthanheader</td>
+    <td>Textthatisalsolongerthanheader</td>
+    <td>6</td>
+    <td>XXXXYYYY</td>
+    <td>XXXXYYYYZZZZZZ</td>
+    <td>Short</td>
+    <td>Textthatislongerthanheader</td>
+    <td>Textthatisalsolongerthanheader</td>
+    <td>6</td>
+    <td>XXXXYYYY</td>
+    <td>XXXXYYYYZZZZZZ</td>
+    <td>Short</td>
+</tr>
+<tr>
+    <td class="number">345234</td>
+    <td>Textthatislongerthanheader</td>
+    <td>Textthatisalsolongerthanheader</td>
+    <td>6</td>
+    <td>XXXXYYYY</td>
+    <td>XXXXYYYYZZZZZZ</td>
+    <td>Short</td>
+    <td>Textthatislongerthanheader</td>
+    <td>Textthatisalsolongerthanheader</td>
+    <td>6</td>
+    <td>XXXXYYYY</td>
+    <td>XXXXYYYYZZZZZZ</td>
+    <td>Short</td>
+</tr>
+<tr>
+    <td class="number">345234</td>
+    <td>Textthatislongerthanheader</td>
+    <td>Textthatisalsolongerthanheader</td>
+    <td>6</td>
+    <td>XXXXYYYY</td>
+    <td>XXXXYYYYZZZZZZ</td>
+    <td>Short</td>
+    <td>Textthatislongerthanheader</td>
+    <td>Textthatisalsolongerthanheader</td>
+    <td>6</td>
+    <td>XXXXYYYY</td>
+    <td>XXXXYYYYZZZZZZ</td>
+    <td>Short</td>
+</tr>
+<tr>
+    <td class="number">345234</td>
+    <td>Textthatislongerthanheader</td>
+    <td>Textthatisalsolongerthanheader</td>
+    <td>6</td>
+    <td>XXXXYYYY</td>
+    <td>XXXXYYYYZZZZZZ</td>
+    <td>Short</td>
+    <td>Textthatislongerthanheader</td>
+    <td>Textthatisalsolongerthanheader</td>
+    <td>6</td>
+    <td>XXXXYYYY</td>
+    <td>XXXXYYYYZZZZZZ</td>
+    <td>Short</td>
+</tr>
+<tr>
+    <td class="number">345234</td>
+    <td>Textthatislongerthanheader</td>
+    <td>Textthatisalsolongerthanheader</td>
+    <td>6</td>
+    <td>XXXXYYYY</td>
+    <td>XXXXYYYYZZZZZZ</td>
+    <td>Short</td>
+    <td>Textthatislongerthanheader</td>
+    <td>Textthatisalsolongerthanheader</td>
+    <td>6</td>
+    <td>XXXXYYYY</td>
+    <td>XXXXYYYYZZZZZZ</td>
+    <td>Short</td>
+</tr>
+<tr>
+    <td class="number">345234</td>
+    <td>Textthatislongerthanheader</td>
+    <td>Textthatisalsolongerthanheader</td>
+    <td>6</td>
+    <td>XXXXYYYY</td>
+    <td>XXXXYYYYZZZZZZ</td>
+    <td>Short</td>
+    <td>Textthatislongerthanheader</td>
+    <td>Textthatisalsolongerthanheader</td>
+    <td>6</td>
+    <td>XXXXYYYY</td>
+    <td>XXXXYYYYZZZZZZ</td>
+    <td>Short</td>
+</tr>
+<tr>
+    <td class="number">345234</td>
+    <td>Textthatislongerthanheader</td>
+    <td>Textthatisalsolongerthanheader</td>
+    <td>6</td>
+    <td>XXXXYYYY</td>
+    <td>XXXXYYYYZZZZZZ</td>
+    <td>Short</td>
+    <td>Textthatislongerthanheader</td>
+    <td>Textthatisalsolongerthanheader</td>
+    <td>6</td>
+    <td>XXXXYYYY</td>
+    <td>XXXXYYYYZZZZZZ</td>
+    <td>Short</td>
+</tr>
+<tr>
+    <td class="number">345234</td>
+    <td>Textthatislongerthanheader</td>
+    <td>Textthatisalsolongerthanheader</td>
+    <td>6</td>
+    <td>XXXXYYYY</td>
+    <td>XXXXYYYYZZZZZZ</td>
+    <td>Short</td>
+    <td>Textthatislongerthanheader</td>
+    <td>Textthatisalsolongerthanheader</td>
+    <td>6</td>
+    <td>XXXXYYYY</td>
+    <td>XXXXYYYYZZZZZZ</td>
+    <td>Short</td>
+</tr>
+<tr>
+    <td class="number">345234</td>
+    <td>Textthatislongerthanheader</td>
+    <td>Textthatisalsolongerthanheader</td>
+    <td>6</td>
+    <td>XXXXYYYY</td>
+    <td>XXXXYYYYZZZZZZ</td>
+    <td>Short</td>
+    <td>Textthatislongerthanheader</td>
+    <td>Textthatisalsolongerthanheader</td>
+    <td>6</td>
+    <td>XXXXYYYY</td>
+    <td>XXXXYYYYZZZZZZ</td>
+    <td>Short</td>
+</tr>
+</tbody>
+</table>

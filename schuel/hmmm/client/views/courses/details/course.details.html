@@ -1,0 +1,133 @@
+<template name="coursedetails">
+	<div class="coursedetails">
+		<div class="coursedetails_column_left">
+		{{#if edit}}
+			{{> course_edit course}}
+		{{else}}
+			<div class="course_main {{#with course}}{{coursestate}}{{/with}}">
+				{{title "Openki - " course.name}}
+				{{#if isProposal}}
+					<div class="courseStatus" >
+						<div>
+						{{mf 'course.details.tag.proposal' 'proposal'}}
+						</div>
+					</div>
+				{{/if}}
+
+				<div class="name">
+					{{#if editableName}}{{>editable editableName}}{{else}}{{course.name}}{{/if}}
+				</div>
+
+
+
+				{{#with course}}
+				<div class="course_categories">
+					{{> show_categories}}
+				</div>
+				<div class="course-groups-list-container">
+					{{> groupList}}
+				</div>
+				{{/with}}
+				{{> groupListing course}}
+
+				{{> show_course_submenu}}
+				{{#with course}}
+				{{#if currentUserMayEdit}}
+				<div class="edit_buttons">
+					<div class="btn-group" role="group" aria-label="...">
+						<button type="button" class="edit" role="button">
+							<span class="glyphicon glyphicon-edit"></span>
+							{{mf 'course.details.edit_btn' 'Edit'}}
+						</button>
+						<button type="button" class="del" role="button">
+							<span class="glyphicon glyphicon-remove"></span>
+							{{mf 'course.details.del_btn' 'Delete'}}
+						</button>
+					</div>
+				</div>
+				{{/if}}
+				{{/with}}
+			</div>
+			{{> report}}
+		{{/if}}
+			<!-- GET VIEWPORT SIZE AND ADJUST LAYOUT-->
+			{{#if mobileViewport}}
+				{{> course_events}}
+			{{else}}
+				<div class="discussion">
+					{{> discussion course}}
+				</div>
+			{{/if}}
+		</div>
+		<div class="coursedetails_column_right">
+			{{#if mobileViewport}}
+				<div class="courseDetails_roles_container">
+						{{> roles course}}
+						{{> roles_details roles_details}}
+				</div>
+				<div class="discussion">
+					{{> discussion course}}
+				</div>
+			{{else}}
+				{{> course_events}}
+				<div class="courseDetails_roles_container">
+						{{> roles course}}
+						{{> roles_details roles_details}}
+				</div>
+			{{/if}}
+		</div>
+	</div>
+</template>
+
+
+
+
+<template name="show_course_submenu">
+	<div>
+		<nav>
+			<ul class="nav nav-tabs">
+				<li role="presentation" class='active'>
+					<a href="#description" data-toggle="tab">
+						<span class="fa fa-info"></span>&nbsp;
+						{{mf 'course.subnav.descr' 'Description'}}
+					</a>
+				</li>
+			{{#if hasFiles}}
+				<li role="presentation">
+					<a href="#docs" data-toggle="tab">
+						<span class="glyphicon glyphicon-folder-open"></span>&nbsp;
+						{{mf 'course.subnav.docs' 'Docs'}}
+					</a>
+				</li>
+			{{/if}}
+				<li role="presentation">
+					<a href="#history" data-toggle="tab">
+						<span class="fa fa-history"></span>&nbsp;
+						{{mf 'course.subnav.history' 'History'}}
+					</a>
+				</li>
+			</ul>
+		</nav>
+		<div class="tab-content">
+			<div class="tab-pane active" id="description">
+				{{> course_description}}
+			</div>
+		{{#if hasFiles}}
+			<div class="tab-pane" id="docs">
+				{{> coursedocs}}
+			</div>
+		{{/if}}
+			<div class="tab-pane" id="history">
+				{{> coursehistory}}
+			</div>
+		</div>
+	</div>
+</template>
+
+<template name="course_description">
+	<div>
+		<p class="course_description">
+			{{#if editableDescription}}{{>editable editableDescription}}{{else}}{{{course.description}}}{{/if}}
+		</p>
+	</div>
+</template>

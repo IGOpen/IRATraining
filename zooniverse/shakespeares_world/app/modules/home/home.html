@@ -1,0 +1,38 @@
+<div class="bg-home">
+    <div class="container-fluid">
+        <div class="home-jumbotron">
+
+            <div class="bg"></div>
+            <div class="text">
+                <h1>Shakespeare's <b>World</b></h1>
+                <p>Transcribe handwritten documents by Shakespeare’s contemporaries and help us understand his life and times. Along the way you’ll find words that have yet to be recorded in the authoritative Oxford English Dictionary, and which will eventually be added to this important resource.</p>
+
+                <a ui-sref="Transcribe" class="btn btn-success btn-lg">Get started</a>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<ul class="genre-list">
+    <h3>Choose a genre and start transcribing!</h3>
+    <div class="center-content">
+        <div class="genre"
+            ng-repeat="genre in ::vm.genres"
+            ui-sref="TranscribeSubjectSet({ subjectSet: genre.id })"
+            ng-class="{ '-active': hover }"
+            ng-mouseenter="hover = true"
+            ng-mouseleave="hover = false">
+            <div class="title">
+                <h4>{{ genre.display_name }}</h4>
+            </div>
+        </div>
+    </div>
+</ul>
+
+<div class="banner-with-logos">
+    <a href="https://www.zooniverse.org/" target="_blank"><img src="images/logos/zooniverse-logo.svg"></a>
+    <a href="http://www.folger.edu/" target="_blank"><img src="images/logos/folger-logo.png"></a>
+    <a href="http://folgerpedia.folger.edu/Early_Modern_Manuscripts_Online_%28EMMO%29" target="_blank"><img src="images/logos/emmo-logo.png"></a>
+    <a href="http://www.oed.com/" target="_blank"><img src="images/logos/oed-logo.png"></a>
+</div>

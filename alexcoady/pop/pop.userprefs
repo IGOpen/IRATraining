@@ -1,0 +1,18 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/scripts/balloons/BalloonSpawnScript.js">
+    <Files>
+      <File FileName="Assets/scripts/balloons/BalloonSpawnScript.js" Line="47" Column="35" />
+      <File FileName="Assets/scripts/walls/BottomWallScript.js" Line="5" Column="23" />
+      <File FileName="Assets/scripts/gameover/gameOverScript.js" Line="1" Column="1" />
+      <File FileName="Assets/scripts/character/PopScript.js" Line="48" Column="73" />
+      <File FileName="Assets/scripts/walls/WallSetupScript.js" Line="1" Column="1" />
+      <File FileName="Assets/scripts/balloons/BalloonScript.js" Line="23" Column="14" />
+      <File FileName="Assets/scripts/camera/CameraFollowScript.js" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

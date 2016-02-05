@@ -1,0 +1,32 @@
+{
+  "name": "kelper",
+  "version": "0.2.33",
+  "description": "Build tool for Large-Scale JavaScript Application in TypeScript",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/facadus/kelper.git"
+  },
+  "bin": {
+    "install": "./bin/install.js"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "dependencies": {
+    "chai": "2.2.0",
+    "requirejs": "2.1.16",
+    "grunt-contrib-requirejs": "0.4.4",
+    "grunt-contrib-uglify": "0.8.0",
+    "grunt-mocha-phantomjs": "0.6.1",
+    "grunt-run-task": "0.1.2",
+    "grunt-typescript": "0.6.1",
+    "mocha": "2.2.1",
+    "rjs-build-analysis": "0.0.3",
+    "typescript": "1.4.1"
+  },
+  "devDependencies": {
+    "grunt": "latest",
+    "grunt-bump": "0.0.14",
+    "grunt-exec": "~0.4.5"
+  }
+}

@@ -1,0 +1,26 @@
+extends shared/layout
+block main-content
+    h1 Welcome to WebServerXplorer demo
+
+    .container(ng-controller="StatisticsController as vm" class="jumbotron")
+        h3.text-center Last Last 5 registered users
+        br
+        button.btn.btn-lg.btn-info(ng-click="vm.loadStatistics()") Refresh
+        br
+        br
+        br
+        table.table
+            th Username
+            th Email
+            th Roles
+            tr(ng-repeat="stat in vm.stats")
+                td {{stat.username}}
+                td {{stat.email}}
+                td
+                    ul(ng-repeat="role in stat.roles")
+                        li {{role}}
+
+block page-scripts
+    include shared/angular-common
+    script(src="/js/angular/statistics/statistics-service.js")
+    script(src="/js/angular/statistics/statistics-controller.js")

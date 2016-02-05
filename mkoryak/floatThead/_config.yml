@@ -1,0 +1,17 @@
+# Dependencies
+markdown:         rdiscount
+pygments:         true
+
+# Permalinks
+permalink:        pretty
+
+# Server
+destination:      ./compiled-docs/
+exclude:          [".gitignore"]
+port:             9002
+baseurl:          /floatThead/
+
+# Site vars
+base_url:         "/floatThead"
+
+js_url:           /floatThead/dist/jquery.floatThead.js

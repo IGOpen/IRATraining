@@ -1,0 +1,5 @@
+{
+  "resourcePath": "resources",
+  "source": "target/optimized",
+  "target": "target/finalized"
+}

@@ -1,0 +1,70 @@
+Meteor.methods({
+	insert_userdata: function(username, email, password){
+		Accounts.createUser({username:username, email:email, password:password});
+	},
+	update_userdata: function(username, email, privacy) {
+		var user = Meteor.user();
+		
+		var changes = {};
+		if (user.username !== username) { changes.username = username; }
+		if (user.privacy !== privacy) { changes.privacy = !!privacy; }
+		if (!user.emails || !user.emails[0] || user.emails[0].address !== email) {
+			// Working under the assumption that there is only one address
+			// if there was more than one address oops I accidentally your addresses
+			if (email && email.length > 3) {
+				changes.emails = [{ address: email, verified: false }];
+			} else {
+				changes.emails = [];
+			}
+		} 
+		if (!_.isEmpty(changes)) {
+			Meteor.users.update(Meteor.userId(), {
+				$set: changes
+			});
+		}
+	},
+	insert_anonId: function(anonId){
+		Meteor.users.update(Meteor.userId(), {
+			$push: {
+				anonId: anonId
+			}
+		});
+	},
+	updateUserLocale: function(locale){
+		Meteor.users.update(Meteor.userId(), {
+			$set: { 'profile.locale': locale }
+		});
+	}
+});
+
+
+////////  Geo-IP    find nearest region to IP of user
+Meteor.methods({
+	autoSelectRegion: function() {
+		var ip = this.connection.clientAddress;
+
+		if (ip.indexOf('127') === 0) {
+			return '9JyFCoKWkxnf8LWPh'; // use Testistan for localhost
+		}
+		if (Meteor.settings.testdata) {
+			return 'EZqQLGL4PtFCxCNrp';  // use Spilistan if deployed with testdata
+		}
+
+		var geo = GeoIP.lookup(ip);
+
+		if (!geo) {
+			return false;
+		}
+
+		var closest = Regions.findOne({
+			loc: { $near: {
+				$geometry: {type: "Point", coordinates: geo.ll.reverse()},
+				$maxDistance: 200000 // meters
+			}}
+		});
+
+		if (closest) return closest._id;
+		return false;
+	}
+
+});

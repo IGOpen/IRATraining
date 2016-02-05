@@ -1,0 +1,35 @@
+extends ../shared/layout
+block main-content
+
+    table#user-table.table.table-bordered.table-striped.table-hover
+        tr.warning
+            th
+                | User name
+            th
+                | Email
+            th
+                | Roles
+            th
+                | Edit
+            th
+                | Delete
+
+        - var i = -1
+        each user in users
+            - ++i
+            tr(class=(i % 2) ? 'user-row' : 'info user-row')
+
+                td
+                    | #{user.username}
+                td
+                    | #{user.email}
+                td
+                    | #{user.roles.join(', ')}
+                td
+                    a.glyphicon.glyphicon-search(href="/admin/user/edit/" + user._id)
+                td
+                    a(href="#")
+                        span.confirmation.glyphicon.glyphicon-trash(data-url="/admin/user/delete/" + user._id, data-username="#{user.username}")
+
+block page-scripts
+    script(type="text/javascript" src="/js/delete-user.js")

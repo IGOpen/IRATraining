@@ -1,0 +1,125 @@
+/**
+ * CSS for DokuWiki Plugin Wizard
+ *
+ * @author Michael Klier <chi@chimeric.de>
+ */ 
+body {
+  font: 0.8125em "Lucida Grande", Verdana, sans-serif;
+}
+
+div#container div.nojs {
+    background-color: #CF8181;
+    border: 1px solid #CF0000;
+    padding: 1em;
+    margin: 2em;
+    width: 20em;
+}
+
+div#container div.intro p {
+    padding: 1em;
+    width: 30%;
+    float: left;
+}
+
+div#container {
+  margin: 2em;
+  background: transparent url(../pix/dwplugin-100.png) top right no-repeat;
+}
+
+div#container form {
+  padding: 1em;
+}
+
+div#container div#plugin_info {
+  width: 40%;
+  float: left;
+}
+
+div#container div#plugin_components {
+  float: left;
+  width: 59%;
+}
+
+
+div#container label.block {
+  width: 15em;
+  float: left;
+  font-weight: bold;
+}
+
+div#container label.inline {
+  float: none;
+  display: inline;
+  font-weight: bold;
+}
+
+div#container input.edit,
+div#container select {
+  margin-bottom: 1em;
+}
+
+div#container input.readonly {
+  border: none;
+}
+
+div#container div.plugin_info input.readonly,
+div#container div.ajay__plugin_layout input.readonly {
+  width: 600px;
+}
+
+div#container input.focus {
+  border-color: red;
+}
+
+div#ajax__popup {
+  display: none;
+  position: absolute;
+  left: 35em;
+  top: 15em;
+  height: 300px;
+  width: 500px;
+  overflow: scroll;
+  border: 2px solid #333;
+  padding: 1em;
+  z-index: 1000;
+  background: #fff;
+}
+
+div#container label.ajax__plugin_component_name,
+div#container input.ajax__plugin_component_name {
+  display: none;
+}
+
+div#container span.plugin_component_name {
+  display: block;
+  margin-bottom: 0.5em;
+}
+
+div#container span.plugin_component_type {
+  display: none;
+}
+
+div#container div.plugin_component {
+  margin: 0.5em;
+  padding: 0.5em;
+  border: 1px dotted #ababab;
+  width: 25em;
+  background: #dfdfdf;
+}
+
+div#container div.plugin_component .plugin_component_name {
+  font-size: 120%;
+  margin-bottom: 1em;
+}
+
+div#container div.plugin_component a.ajax__del_component {
+  float: right;
+  width: 24px;
+  height: 24px;
+  text-indent: -10000px;
+  background: transparent url(../pix/close.png) top left no-repeat;
+}
+
+div.clearer {
+  clear: both;
+}

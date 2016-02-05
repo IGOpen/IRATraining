@@ -1,0 +1,452 @@
+---
+layout: default
+slug: home
+base_url: "."
+---
+<script type='text/javascript' src="{{ page.base_url }}/lib/moment.js"></script>
+
+<div class='row'>
+    <div class='span12' id='intro'>
+        <div class='intro-container'>
+            <div class='row'>
+                <div class='span6'>
+                    <h1>Intro</h1>
+
+
+                    <code>jquery.floatThead</code> is a floating/locked/sticky table header plugin that requires no special CSS and supports window and overflow scrolling.
+                    <h4>Features:</h4>
+                    <ul>
+                        <li>Floats the table header - so that the user can always see it</li>
+                        <li>Supports tables with inner scroll bars, or window scrolling</li>
+                        <li>Horizontal or vertical scrolling</li>
+                        <li>Doesn't clone the <code>thead</code> - so your events stay bound</li>
+                        <li>Doesn't mess with your styles</li>
+                        <li>Works on any table</li>
+                        <li>Requires no special css</li>
+                        <li>Works with <a href="http://datatables.net" target="_blank">datatables</a> out of the box</li>
+                    </ul>
+                    <h4>Requirements:</h4>
+                    <ul>
+                        <li>jQuery 1.8.x or better (code is 1.9+ compliant)<small> <strong>or</strong> jQuery 1.7.x + <a href="http://jqueryui.com/resources/download/jquery-ui-1.8.24.zip" target='_blank'>jQuery UI core</a></small></li>
+                        <li>Internet Exploder 8 - 11, FireFox 10+ or Chrome15+</li>
+                        <li><small>Add this meta tag into your header to placate IE: <code>&lt;meta http-equiv="X-UA-Compatible" content="IE=10; IE=9; IE=8; IE=7; IE=EDGE" /&gt;</code></small></li>
+                    </ul>
+
+                </div>
+                <div class='span5 offset1'>
+                    <div class='main-demo'>
+                        <div class='cta'>
+                            <h1>Demo</h1>
+                            <button class="btn btn-success run-main-demo" type="button">Run floatThead <i class='icon-play icon-white'></i></button><br/>
+                        </div>
+                        <br/>
+                        <div class='wrapper small'>
+                            <table class="table demo0 large template table-bordered table-striped">
+                                <thead> <tr> <th><a href="#" id='demoHeader1'>Header 1</a></th> <th><a href="#" id='demoHeader2'>Header 2</a></th> <th><a href="#" id='demoHeader3'>Header...3</a></th> </tr> </thead>
+                                <tbody> <tr> <td>Cell Content 1</td> <td>Cell Content 2</td> <td>Cell Content 3</td> </tr> <tr> <td>More Cell Content 1</td> <td>More Cell Content 2</td> <td>More Cell Content 3</td> </tr> <tr> <td>Even More Cell Content 1</td> <td>Even More Cell Content 2</td> <td>Even More Cell Content 3</td> </tr> <tr> <td>And Repeat 1</td> <td>And Repeat 2</td> <td>And Repeat 3</td> </tr> <tr> <td>Cell Content 1</td> <td>Cell Content 2</td> <td>Cell Content 3</td> </tr> <tr> <td>More Cell Content 1</td> <td>More Cell Content 2</td> <td>More Cell Content 3</td> </tr> <tr> <td>Even More Cell Content 1</td> <td>Even More Cell Content 2</td> <td>Even More Cell Content 3</td> </tr> <tr> <td>And Repeat 1</td> <td>And Repeat 2</td> <td>And Repeat 3</td> </tr> <tr> <td>Cell Content 1</td> <td>Cell Content 2</td> <td>Cell Content 3</td> </tr> <tr> <td>More Cell Content 1</td> <td>More Cell Content 2</td> <td>More Cell Content 3</td> </tr> <tr> <td>Even More Cell Content 1</td> <td>Even More Cell Content 2</td> <td>Even More Cell Content 3</td> </tr> <tr> <td>And Repeat 1</td> <td>And Repeat 2</td> <td>And Repeat 3</td> </tr> <tr> <td>Cell Content 1</td> <td>Cell Content 2</td> <td>Cell Content 3</td> </tr> <tr> <td>More Cell Content 1</td> <td>More Cell Content 2</td> <td>More Cell Content 3</td> </tr> <tr> <td>Even More Cell Content 1</td> <td>Even More Cell Content 2</td> <td>Even More Cell Content 3</td> </tr> <tr> <td>And Repeat 1</td> <td>And Repeat 2</td> <td>And Repeat 3</td> </tr> <tr> <td>Cell Content 1</td> <td>Cell Content 2</td> <td>Cell Content 3</td> </tr> <tr> <td>More Cell Content 1</td> <td>More Cell Content 2</td> <td>More Cell Content 3</td> </tr> <tr> <td>Even More Cell Content 1</td> <td>Even More Cell Content 2</td> <td>Even More Cell Content 3</td> </tr></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <br/>
+    </div>
+</div>
+<div class='row'>
+    <div class='span12' id='usage'>
+        <h1>Usage</h1>
+        There are 2 ways you can initialize the table:<br/><br/>
+        <ul>
+            <li><b>Overflow scrolling</b><br/><small>The table is inside of a container with overflow:auto</small></li>
+            <li><b>Window scrolling</b><br/><small>Header becomes locked at the top of the page as user scrolls down</small></li>
+        </ul>
+        <b>Window scrolling</b> is the default. Initialize floatThead without any params to use it. <code>$('table').floatThead()</code>
+        <br/><br/>
+        <b>Overflow scrolling</b> takes a bit more work. You must specify a container element inside of which the table will scroll.
+        You must create this element. Usually a div will wrap the table with overflow:auto and a size smaller than the table.<br/>
+{% highlight js %}
+var $table = $('table.demo');
+$table.floatThead({
+    scrollContainer: function($table){
+		return $table.closest('.wrapper');
+	}
+});
+{% endhighlight %}
+    </div>
+</div>
+<br/>
+<div class='row'>
+    <div class='span12' id='options'>
+        <h1>Options</h1>
+        <div class="alert">
+            <strong>Note:</strong>
+            All the options which are <b>function</b>s take a single argument: <code>$table</code> - the table who's header is being floated.<br/>ex: <code>function($table){ ... }</code>
+        </div>
+        <table class="table table-bordered table-striped">
+            <thead>
+            <tr>
+                <th style="width: 100px;">Name</th>
+                <th style="width: 100px;">type</th>
+                <th style="width: 50px;">default</th>
+                <th>description</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>scrollContainer</td>
+                <td>function</td>
+                <td>null</td>
+                <td>Defines a container element inside of which the table scrolls vertically and/or horizontally. <small>usually a wrapping div</small></td>
+            </tr><tr>
+                <td>scrollingTop</td>
+                <td>number or function</td>
+                <td>0</td>
+                <td>Offset from the top of the <code>window</code> where the floating header will 'stick' when scrolling down</td>
+            </tr><tr>
+                <td>scrollingBottom</td>
+                <td>number or function</td>
+                <td>0</td>
+                <td>Offset from the bottom of the <code>window</code> where the floating header will 'stick' when scrolling down</td>
+            </tr><tr>
+                <td>floatTableClass</td>
+                <td>string</td>
+                <td>floatThead-table</td>
+                <td>This class is added to the table element after you run floatThead on it</td>
+            </tr><tr>
+                <td>floatContainerClass</td>
+                <td>string</td>
+                <td>floatThead-container</td>
+                <td>This class is added to the container div inside of which your <code>thead</code> will spend time floating</td>
+            </tr><tr>
+                <td>useAbsolutePositioning</td>
+                <td>boolean</td>
+                <td>true</td>
+                <td>Position the floated header using absolute positioning or using fixed positioning. Fixed positioning performs better with tables that use window scrolling, but fails miserably on highly dynamic pages where DOM can be suddenly modified causing the location of the floated table to shift. (You should call <code>.floatThead('reflow')</code> in this case, but you cant always instrument your code to make that call.)</td>
+            </tr><tr>
+                <td>debounceResizeMs</td>
+                <td>number</td>
+                <td>1</td>
+                <td>The headers are repositioned on resize. Because this event has the potential to fire a bunch of times, it is debounced. This is the <a href='http://unscriptable.com/2009/03/20/debouncing-javascript-methods/' target='_blank'>debounce rate</a>.</td>
+            </tr><tr>
+                <td>zIndex</td>
+                <td>number</td>
+                <td>1001</td>
+                <td>z-index of the floating header</td>
+            </tr><tr>
+                <td>cellTag</td>
+                <td>string</td>
+                <td>th:visible</td>
+                <td>Specifies the selector used to find header cells (in the table's <code>thead</code> element)</td>
+            </tr><tr>
+                <td>debug</td>
+                <td>boolean</td>
+                <td>false</td>
+                <td>Point out various possible issues via <code>console.log</code> if it is available</td>
+            </tr>
+            <tr>
+                <td>getSizingRow</td>
+                <td>function</td>
+                <td>undefined</td>
+                <td><p class="text-error">Used by IE Only</p> If your table's first visible row (<code>tbody tr:visible:first&gt;*</code>) contains <code>td</code> or <code>th</code> elements with <code>colspan</code>s, then you need to return another set of cells  which have no colspans. In other words the selector should return the same number of cells as columns in your table. <a href="{{ site.base_url }}/examples/row-groups/">In depth docs</a></td>
+            </tr>
+            <tr>
+                <td>copyTableClass</td>
+                <td>boolean</td>
+                <td>true</td>
+                <td>Should the table's class attribute be copied to the floated table? This make the styles written for the table's class selector apply also to the floated header. However, if you are later selecting this table by class you may be surprised to find 2 tables.</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class='row'>
+    <div class='span12' id='methods'>
+        <h1>Methods</h1>
+        <h4><code>.floatThead('destroy')</code></h4>
+        <p>        Removes the widget from the table
+{% highlight js %}
+var $table = $('table.demo1');
+//float the headers
+$table.floatThead();
+//unfloat the headers
+$table.floatThead('destroy');
+{% endhighlight %}
+        </p>
+        <br/>
+        <h4><code>.floatThead('reflow')</code></h4>
+        <p>
+        Cause header to realign itself to the correct position. Same as the <code>reflow</code> event below.
+{% highlight js %}
+var $table = $('table.demo1');
+//float the headers
+$table.floatThead();
+$table.floatThead('reflow');
+{% endhighlight %}
+        </p>
+        <br/>
+        <h4><code>.floatThead('getRowGroups')</code></h4>
+        <p>
+            Returns the table's <code>thead</code>, <code>tbody</code> and <code>tfoot</code> elements.
+            Useful because you cannot simply select <code>thead</code> if the table's header is currently being floated.<br/>
+            For more info on why you may want this <a href="{{ site.base_url }}/examples/hidden-columns/">read through this example</a>
+        </p>
+    </div>
+</div>
+<div class='row'>
+    <div class='span12' id='events'>
+        <h1>Events</h1>
+        <h4><code>$table.trigger('reflow')</code></h4>
+        Given a table element $table that has been widgetized, a reflow event causes the header to realign itself to the correct position. This event must be triggered if the DOM is modifed in such a way that the widgetized table's location changes.
+{% highlight js %}
+var $table = $('table.demo1');
+$table.floatThead();
+//change the location of the table in the dom:
+$table.css('marginTop', 100);
+//cause the floated header to be properly positioned again:
+$table.trigger('reflow');
+{% endhighlight %}
+    </div>
+</div>
+<br/>
+<div class='row'>
+    <div class='span12' id='examples'>
+        <h1>Examples</h1>
+        <div class='row'>
+            <div class='span6'>
+                <h2>Overflow Scrolling</h2>
+                <div class='desc'>
+                    Overflow scrolling is used when the table is inside of a container smaller than itself with overflow:auto.<br/><br/>
+                    This also demonstrates the <b>reflow</b> method. When a DOM modification causes the table's location to change, you must call this method on the table.<br/>
+                    <br/>
+{% highlight js %}
+var $demo1 = $('table.demo1');
+$demo1.floatThead({
+	scrollContainer: function($table){
+		return $table.closest('.wrapper');
+	}
+});
+$('a#change-dom').click(function(){ //click to remove
+	$(this).parent().hide();
+	//DOM has changed. must reflow floatThead
+	$demo1.floatThead('reflow');
+});
+{% endhighlight %}
+                </div>
+                <div class='wrapper' style='height: 400px'>
+                    <div style='padding: 20px; display:block; font-weight:bold;'>
+                        There might be some table controls here or something.. <a style='cursor:pointer;' id='change-dom'>Click to remove</a>
+                    </div>
+                    <div class='gimme-table' data-cls='demo1'></div>
+                </div>
+            </div>
+            <div class='span6'>
+                <h2>Window Scrolling</h2>
+                <div class='desc'>
+                    Window scrolling is used when you have a large table that takes up the whole screen.<br/>
+                    <br/>
+{% highlight js %}
+$('table.demo2').floatThead({
+	useAbsolutePositioning: false
+	// absolutePositioning is better for
+	// highly dynamic sites
+	// (which this is not)
+});
+{% endhighlight %}
+                </div>
+                <div class='gimme-table' data-cls='demo2'></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class='row'>
+    <div class='span6' id='issues'>
+        <h1>Open Issues</h1>
+        Issues are pulled from <a href='https://github.com/mkoryak/floatThead/issues?state=open'>github</a><br/><br/>
+        <ul>
+            <li>There are no issues! Yey!</li>
+        </ul>
+    </div>
+</div>
+<br/><br/>
+<div class='row'>
+    <div class='span12' id='download'>
+        <h1>Download</h1>
+
+        <p class="lead">Download Latest Release<span id="release-info"></span>:</p>
+
+        <div id="release">
+            <a href="https://github.com/mkoryak/floatThead/releases">Browse Releases</a>
+        </div>
+        <br/>
+        <p>Inside of that zip the following javascript files are of interest to you:</p>
+        <ul class="list-unstyled">
+            <li><code>/dist/jquery.floatThead.js</code> = development version</li>
+            <li><code>/dist/jquery.floatThead.min.js</code> = production version</li>
+        </ul>
+        <p>if your project includes underscore and you want to save a few bytes you can use the slim version:</p>
+        <ul class="list-unstyled">
+            <li><code>/dist/jquery.floatThead-slim.js</code></li>
+            <li><code>/dist/jquery.floatThead-slim.min.js</code></li>
+        </ul>
+        <br/>
+        <h1>CDN Hosted</h1>
+        <p>jQuery.floatThead is <a href="http://cdnjs.com/libraries/floatthead/" target="_blank">hosted on cdnjs.com</a>, though sometimes it takes a bit for a new version to propagate there.</p>
+        <br/>
+        <h1>Install Using Bower</h1>
+{% highlight bash %}
+bower install floatThead
+{% endhighlight %}
+        <br/>
+    </div>
+</div>
+<div class='row'>
+    <div class="span6">
+        <div class="alert">
+            To report issues, visit the project's <a href='https://github.com/mkoryak/floatThead/issues?state=open'>github issues page</a>.
+        </div>
+    </div>
+    <div class="span6">
+        <div class="alert alert-success">
+            Or everything works great? Please &nbsp;<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=SDJJ42BTC46LY&lc=US&item_name=floatThead&currency_code=USD&bn=PP%2dDonationsBF%3adonate%2dcoffee%2epng%3aNonHosted"><img src="http://programmingdrunk.com/donate-coffee.png"></a>
+        </div>
+    </div>
+</div>
+<div class='row'>
+    <div class='span12' id='license'>
+        <h1>License</h1>
+        Code is licensed under <a href="http://opensource.org/licenses/MIT">MIT</a>, the docs under
+        <a href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International</a>
+        <br/>
+        Copyright &copy; 2012-2014 Misha Koryak <small>(my last name at gmail)</small>
+    </div>
+</div>
+<br/>
+<br/>
+<br/>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $.ajax({
+            url: "https://api.github.com/repos/mkoryak/floatThead/issues",
+            dataType: "jsonp",
+            success: function (d) {
+                if(d && d.data){
+                    d = d.data;
+                    var $ul = $('#issues ul');
+                    $ul.empty();
+                    for(var i = 0; i < d.length; i++){
+                        var issue = d[i];
+                        if(issue.state == 'open'){
+                            var label = "";
+                            if(issue.labels.length){
+                                var l = issue.labels[0];
+                                label = " <div class='pull-right text-left' style='width: 80px;'><span class='label "+ l.name+"' style='background-color:#"+ l.color+";'>"+ l.name+"</span></div>";
+                            }
+                            var title = $("<div></div>").text(issue.title).html();
+                            $ul.append('<li><a href="'+issue.html_url+'" target="_blank">'+title+'</a>'+label+'</li>');
+                        }
+                    }
+                }
+            }
+        });
+        $.ajax({
+            url: "https://api.github.com/repos/mkoryak/floatThead/releases",
+            dataType: "jsonp",
+            success: function (d) {
+                if(d && d.data){
+                    var rls = d.data[0];
+                    var pub = moment(rls.published_at);
+                    var date = pub.format('MMMM Do YYYY');
+                    var ago = moment(pub).fromNow();
+                    var tag = rls.tag_name;
+                    var zip = rls.zipball_url;
+                    var tar = rls.tarball_url;
+
+                    $('#release').html(
+                        "<a class='btn btn-info' href='"+zip+"'><i class='icon icon-download icon-white'></i> Source Code (zip)</a> " +
+                        "<a class='btn btn-info' href='"+tar+"'><i class='icon icon-download icon-white'></i> Source Code (tar.gz)</a>" +
+                        "<a href='https://github.com/mkoryak/floatThead#change-log' target='_blank' style='margin-left:25px;'>Change Log</a>"
+                    );
+                    $('#release-info').html(" <strong>"+tag+"</strong> released "+ago+" ("+date+")");
+                }
+            }
+        });
+
+        var $tableTemplate = $('table.template');
+        $('.gimme-table').each(function(){
+            var $placeholder = $(this);
+            var cls = $placeholder.data('cls');
+            var $clone = $tableTemplate.clone();
+            $clone.attr('class', '').addClass('table').addClass(cls);
+            $placeholder.append($clone);
+        });
+
+
+
+
+        var $demoTable = $("table.demo0");
+        $demoTable.find('#demoHeader1').on('click', function(){
+            alert('Click event fired');
+            return false;
+        }).text('click me');
+        $demoTable.find('#demoHeader2').on('mouseover', function(){
+            $(this).closest('th').css('background-color', '#ccc');
+        }).on('mouseout', function(){
+                    $(this).closest('th').css('background-color', '#eee');
+                }).text('mouse over me');
+
+        $(".run-main-demo").click(function(){
+            var $button = $(this);
+
+
+            if($button.is('.btn-danger')){
+                $demoTable.floatThead('destroy');
+                $button.html("Run floatThead  <i class='icon-play icon-white'></i>").removeClass('btn-danger').addClass('btn-success');
+            } else {
+                $demoTable.floatThead({
+                    //the pageTop is a global function i have here, it takes care of making the table float under my floated nav
+                    scrollingTop: pageTop,
+                    scrollContainer: function($table){
+                        return $table.closest('.wrapper');
+                    },
+                    useAbsolutePositioning: true
+                });
+                $button.tooltip("show");
+                setTimeout(function(){
+                    $button.tooltip("hide");
+                }, 5000);
+                $button.html("Remove floatThead  <i class='icon-trash icon-white'></i>").addClass('btn-danger').removeClass('btn-success');
+            }
+        })
+                .tooltip({
+                    trigger: "manual",
+                    title: "Now try scrolling around in the table",
+                    placement: "top"
+                });
+
+
+
+
+        var $demo1 = $('table.demo1');
+        $demo1.floatThead({
+            //the pageTop is a global function i have here, it takes care of making the table float under my floated nav
+            scrollingTop: pageTop,
+            scrollContainer: function($table){
+                return $table.closest('.wrapper');
+            }
+        });
+        $('#change-dom').click(function(){
+            $(this).parent().hide();
+            $demo1.floatThead('reflow');
+        });
+        $('table.demo2, #options table').floatThead({
+            //the pageTop is a global function i have here, it takes care of making the table float under my floated nav
+            scrollingTop: pageTop,
+            useAbsolutePositioning: false
+        });
+    });
+</script>

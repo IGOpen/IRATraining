@@ -1,0 +1,72 @@
+<head>
+	<meta name="viewport" content="width=device-width,  user-scalable=no">
+</head>
+
+<template name="layout">
+	<div id="wrap">
+		{{> navbar}}
+		<div id="outer">
+			<div id="maincontent">
+				{{> yield}}
+				{{> messages}}
+			</div>
+		</div>
+		<div class="push"></div>
+	</div>
+	{{> kioskLink}}
+	{{> footer}}
+</template>
+
+<template name="region_sel">
+	<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+		<span class="glyphicon glyphicon-record"></span>&nbsp;
+		{{#if region}}
+			{{region.name}}
+		{{else}}
+			{{mf 'menue.All regions' 'All regions'}}
+		{{/if}}
+		<span class="caret"></span>
+	</a>
+
+	<ul class="dropdown-menu" role="menu">
+		<li>
+			<a class="regionselect -clickClose" href="/region/">
+				{{mf 'menue.All regions' 'All regions'}}
+			</a>
+		</li>
+		{{# each regions}}
+			<li>
+				<a href="#" class="regionselect -clickClose">
+					{{name}}
+				</a>
+			</li>
+		{{/each}}
+	</ul>
+</template>
+
+<template name="lang_sel">
+	<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+		<span class="fa fa-language"></span>&nbsp;
+		{{short}}
+		<span class="caret"></span>
+	</a>
+
+	<ul class="dropdown-menu" role="menu">
+		{{#each lgs}}
+			<li>
+				<a href="#" class="langselect -clickClose">
+					{{this.name}}
+				</a>
+			</li>
+		{{/each}}
+	</ul>
+</template>
+
+<template name="ticker">
+	{{#if marquee}}
+		<marquee	bgcolor = "000000" direction="left" scrollamount="5" scrolldelay="1" style="color: white;">
+		{{mf 'menue.Testpage' 'This is only a Testpage. '}}<span style = "padding-left:10em"> </span>
+		{{mf 'menue.Testpage2' 'All data will be erased regularly. '}}<span style = "padding-left:10em"> </span>
+		</marquee>
+	{{/if}}
+</template>

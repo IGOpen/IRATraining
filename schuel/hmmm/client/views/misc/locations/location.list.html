@@ -1,0 +1,30 @@
+<template name="locationlist">
+	<div class="container-fluid">
+		<h1>{{mf 'locations.list.title' 'Rooms'}}</h1>
+	Publically visible locations in {{region}}:    <!-- TODO: -->
+		<div class="">
+			{{#each locations}}
+				{{> location}}
+			{{else}}
+				no locations
+			{{/each}}
+
+			{{> location_edit}}
+		</div>
+	</div>
+</template>
+
+
+
+<template name="location">
+	<div class="locationlist_location">
+		<p class="name"> <a href="{{pathFor 'locationDetails'}}">{{name}}</a></p>
+		<p class="description">{{description}} </p>
+
+		{{#if mayHost}}
+		<p class="mylocation">You can host here</p>
+		{{/if}}
+	</div>
+</template>
+
+

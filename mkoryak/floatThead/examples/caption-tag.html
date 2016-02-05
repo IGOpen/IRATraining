@@ -1,0 +1,149 @@
+---
+layout: default
+slug: caption-tag
+base_url: "./../.."
+---
+
+
+<style type='text/css'>
+    body {
+        padding-top: 81px;
+    }
+    .wrap {
+        height: 250px;
+        overflow-y:scroll;
+    }
+
+    caption {
+        font-size: 15px;
+        font-weight: bold;
+        color: red;
+        padding: 10px;
+    }
+    .caption-top caption {
+        caption-side: top;
+    }
+    .caption-bottom caption {
+        caption-side: bottom;
+    }
+</style>
+
+
+<div class='row'>
+    <div class='span12' id='intro'>
+        <h1>Table Caption Tag</h1>
+        <p>
+            <code>&lt;caption&gt;</code> tag support. You should use <code>caption-side</code> css attribute to set the caption side to top or bottom. The deprecated align attribute is also supported.
+        </p>
+
+        <div class="caption-top">
+
+            <table class="demo-fixed table large template table-bordered table-striped">
+                <caption>Floated using fixed position</caption>
+                <thead> <tr> <th><a href="#" >Header 1</a></th> <th><a href="#" '>Header 2</a></th> <th><a href="#" >Header...3</a></th> </tr> </thead>
+                <tbody> <tr> <td>Cell Content 1</td> <td>Cell Content 2</td> <td>Cell Content 3</td> </tr> <tr> <td>More Cell Content 1</td> <td>More Cell Content 2</td> <td>More Cell Content 3</td> </tr> <tr> <td>Even More Cell Content 1</td> <td>Even More Cell Content 2</td> <td>Even More Cell Content 3</td> </tr> <tr> <td>And Repeat 1</td> <td>And Repeat 2</td> <td>And Repeat 3</td> </tr> <tr> <td>Cell Content 1</td> <td>Cell Content 2</td> <td>Cell Content 3</td> </tr> <tr> <td>More Cell Content 1</td> <td>More Cell Content 2</td> <td>More Cell Content 3</td> </tr> <tr> <td>Even More Cell Content 1</td> <td>Even More Cell Content 2</td> <td>Even More Cell Content 3</td> </tr> <tr> <td>And Repeat 1</td> <td>And Repeat 2</td> <td>And Repeat 3</td> </tr> <tr> <td>Cell Content 1</td> <td>Cell Content 2</td> <td>Cell Content 3</td> </tr> <tr> <td>More Cell Content 1</td> <td>More Cell Content 2</td> <td>More Cell Content 3</td> </tr> <tr> <td>Even More Cell Content 1</td> <td>Even More Cell Content 2</td> <td>Even More Cell Content 3</td> </tr> <tr> <td>And Repeat 1</td> <td>And Repeat 2</td> <td>And Repeat 3</td> </tr> <tr> <td>Cell Content 1</td> <td>Cell Content 2</td> <td>Cell Content 3</td> </tr> <tr> <td>More Cell Content 1</td> <td>More Cell Content 2</td> <td>More Cell Content 3</td> </tr> <tr> <td>Even More Cell Content 1</td> <td>Even More Cell Content 2</td> <td>Even More Cell Content 3</td> </tr> <tr> <td>And Repeat 1</td> <td>And Repeat 2</td> <td>And Repeat 3</td> </tr> <tr> <td>Cell Content 1</td> <td>Cell Content 2</td> <td>Cell Content 3</td> </tr> <tr> <td>More Cell Content 1</td> <td>More Cell Content 2</td> <td>More Cell Content 3</td> </tr> <tr> <td>Even More Cell Content 1</td> <td>Even More Cell Content 2</td> <td>Even More Cell Content 3</td> </tr></tbody>
+            </table>
+
+            <br/><br/><br/><br/><br/><br/><br/>
+
+
+                <table class="demo-abs table large template table-bordered table-striped">
+                    <caption>Floated using absolute position</caption>
+                    <thead> <tr> <th><a href="#" >Header 1</a></th> <th><a href="#" >Header 2</a></th> <th><a href="#" >Header...3</a></th> </tr> </thead>
+                    <tbody> <tr> <td>Cell Content 1</td> <td>Cell Content 2</td> <td>Cell Content 3</td> </tr> <tr> <td>More Cell Content 1</td> <td>More Cell Content 2</td> <td>More Cell Content 3</td> </tr> <tr> <td>Even More Cell Content 1</td> <td>Even More Cell Content 2</td> <td>Even More Cell Content 3</td> </tr> <tr> <td>And Repeat 1</td> <td>And Repeat 2</td> <td>And Repeat 3</td> </tr> <tr> <td>Cell Content 1</td> <td>Cell Content 2</td> <td>Cell Content 3</td> </tr> <tr> <td>More Cell Content 1</td> <td>More Cell Content 2</td> <td>More Cell Content 3</td> </tr> <tr> <td>Even More Cell Content 1</td> <td>Even More Cell Content 2</td> <td>Even More Cell Content 3</td> </tr> <tr> <td>And Repeat 1</td> <td>And Repeat 2</td> <td>And Repeat 3</td> </tr> <tr> <td>Cell Content 1</td> <td>Cell Content 2</td> <td>Cell Content 3</td> </tr> <tr> <td>More Cell Content 1</td> <td>More Cell Content 2</td> <td>More Cell Content 3</td> </tr> <tr> <td>Even More Cell Content 1</td> <td>Even More Cell Content 2</td> <td>Even More Cell Content 3</td> </tr> <tr> <td>And Repeat 1</td> <td>And Repeat 2</td> <td>And Repeat 3</td> </tr> <tr> <td>Cell Content 1</td> <td>Cell Content 2</td> <td>Cell Content 3</td> </tr> <tr> <td>More Cell Content 1</td> <td>More Cell Content 2</td> <td>More Cell Content 3</td> </tr> <tr> <td>Even More Cell Content 1</td> <td>Even More Cell Content 2</td> <td>Even More Cell Content 3</td> </tr> <tr> <td>And Repeat 1</td> <td>And Repeat 2</td> <td>And Repeat 3</td> </tr> <tr> <td>Cell Content 1</td> <td>Cell Content 2</td> <td>Cell Content 3</td> </tr> <tr> <td>More Cell Content 1</td> <td>More Cell Content 2</td> <td>More Cell Content 3</td> </tr> <tr> <td>Even More Cell Content 1</td> <td>Even More Cell Content 2</td> <td>Even More Cell Content 3</td> </tr></tbody>
+                </table>
+
+
+            <br/><br/><br/><br/><br/><br/><br/>
+
+            <div class="wrap">
+                <table class="demo-scroll-fixed table large template table-bordered table-striped">
+                    <caption align="bottom">Floated using fixed position</caption>
+                    <thead> <tr> <th><a href="#" >Header 1</a></th> <th><a href="#" >Header 2</a></th> <th><a href="#" >Header...3</a></th> </tr> </thead>
+                    <tbody> <tr> <td>Cell Content 1</td> <td>Cell Content 2</td> <td>Cell Content 3</td> </tr> <tr> <td>More Cell Content 1</td> <td>More Cell Content 2</td> <td>More Cell Content 3</td> </tr> <tr> <td>Even More Cell Content 1</td> <td>Even More Cell Content 2</td> <td>Even More Cell Content 3</td> </tr> <tr> <td>And Repeat 1</td> <td>And Repeat 2</td> <td>And Repeat 3</td> </tr> <tr> <td>Cell Content 1</td> <td>Cell Content 2</td> <td>Cell Content 3</td> </tr> <tr> <td>More Cell Content 1</td> <td>More Cell Content 2</td> <td>More Cell Content 3</td> </tr> <tr> <td>Even More Cell Content 1</td> <td>Even More Cell Content 2</td> <td>Even More Cell Content 3</td> </tr> <tr> <td>And Repeat 1</td> <td>And Repeat 2</td> <td>And Repeat 3</td> </tr> <tr> <td>Cell Content 1</td> <td>Cell Content 2</td> <td>Cell Content 3</td> </tr> <tr> <td>More Cell Content 1</td> <td>More Cell Content 2</td> <td>More Cell Content 3</td> </tr> <tr> <td>Even More Cell Content 1</td> <td>Even More Cell Content 2</td> <td>Even More Cell Content 3</td> </tr> <tr> <td>And Repeat 1</td> <td>And Repeat 2</td> <td>And Repeat 3</td> </tr> <tr> <td>Cell Content 1</td> <td>Cell Content 2</td> <td>Cell Content 3</td> </tr> <tr> <td>More Cell Content 1</td> <td>More Cell Content 2</td> <td>More Cell Content 3</td> </tr> <tr> <td>Even More Cell Content 1</td> <td>Even More Cell Content 2</td> <td>Even More Cell Content 3</td> </tr> <tr> <td>And Repeat 1</td> <td>And Repeat 2</td> <td>And Repeat 3</td> </tr> <tr> <td>Cell Content 1</td> <td>Cell Content 2</td> <td>Cell Content 3</td> </tr> <tr> <td>More Cell Content 1</td> <td>More Cell Content 2</td> <td>More Cell Content 3</td> </tr> <tr> <td>Even More Cell Content 1</td> <td>Even More Cell Content 2</td> <td>Even More Cell Content 3</td> </tr></tbody>
+                </table>
+            </div>
+            <br/><br/><br/><br/>
+            <div class="wrap">
+                <table class="demo-scroll-abs table large template table-bordered table-striped">
+                    <caption align="top">Floated using absolute position</caption>
+                    <thead> <tr> <th><a href="#" >Header 1</a></th> <th><a href="#" >Header 2</a></th> <th><a href="#" >Header...3</a></th> </tr> </thead>
+                    <tbody> <tr> <td>Cell Content 1</td> <td>Cell Content 2</td> <td>Cell Content 3</td> </tr> <tr> <td>More Cell Content 1</td> <td>More Cell Content 2</td> <td>More Cell Content 3</td> </tr> <tr> <td>Even More Cell Content 1</td> <td>Even More Cell Content 2</td> <td>Even More Cell Content 3</td> </tr> <tr> <td>And Repeat 1</td> <td>And Repeat 2</td> <td>And Repeat 3</td> </tr> <tr> <td>Cell Content 1</td> <td>Cell Content 2</td> <td>Cell Content 3</td> </tr> <tr> <td>More Cell Content 1</td> <td>More Cell Content 2</td> <td>More Cell Content 3</td> </tr> <tr> <td>Even More Cell Content 1</td> <td>Even More Cell Content 2</td> <td>Even More Cell Content 3</td> </tr> <tr> <td>And Repeat 1</td> <td>And Repeat 2</td> <td>And Repeat 3</td> </tr> <tr> <td>Cell Content 1</td> <td>Cell Content 2</td> <td>Cell Content 3</td> </tr> <tr> <td>More Cell Content 1</td> <td>More Cell Content 2</td> <td>More Cell Content 3</td> </tr> <tr> <td>Even More Cell Content 1</td> <td>Even More Cell Content 2</td> <td>Even More Cell Content 3</td> </tr> <tr> <td>And Repeat 1</td> <td>And Repeat 2</td> <td>And Repeat 3</td> </tr> <tr> <td>Cell Content 1</td> <td>Cell Content 2</td> <td>Cell Content 3</td> </tr> <tr> <td>More Cell Content 1</td> <td>More Cell Content 2</td> <td>More Cell Content 3</td> </tr> <tr> <td>Even More Cell Content 1</td> <td>Even More Cell Content 2</td> <td>Even More Cell Content 3</td> </tr> <tr> <td>And Repeat 1</td> <td>And Repeat 2</td> <td>And Repeat 3</td> </tr> <tr> <td>Cell Content 1</td> <td>Cell Content 2</td> <td>Cell Content 3</td> </tr> <tr> <td>More Cell Content 1</td> <td>More Cell Content 2</td> <td>More Cell Content 3</td> </tr> <tr> <td>Even More Cell Content 1</td> <td>Even More Cell Content 2</td> <td>Even More Cell Content 3</td> </tr></tbody>
+                </table>
+            </div>
+        </div>
+        <br/>
+        <br/>
+        <br/>
+        <div class="alert">
+            These following tables all have the caption at the bottom via <code>caption-side: bottom;</code>
+        </div>
+        <br/>
+        <div class="caption-bottom">
+            <table class="demo-fixed table large template table-bordered table-striped">
+                <caption>Floated using fixed position</caption>
+                <thead> <tr> <th><a href="#" >Header 1</a></th> <th><a href="#" '>Header 2</a></th> <th><a href="#" >Header...3</a></th> </tr> </thead>
+                <tbody> <tr> <td>Cell Content 1</td> <td>Cell Content 2</td> <td>Cell Content 3</td> </tr> <tr> <td>More Cell Content 1</td> <td>More Cell Content 2</td> <td>More Cell Content 3</td> </tr> <tr> <td>Even More Cell Content 1</td> <td>Even More Cell Content 2</td> <td>Even More Cell Content 3</td> </tr> <tr> <td>And Repeat 1</td> <td>And Repeat 2</td> <td>And Repeat 3</td> </tr> <tr> <td>Cell Content 1</td> <td>Cell Content 2</td> <td>Cell Content 3</td> </tr> <tr> <td>More Cell Content 1</td> <td>More Cell Content 2</td> <td>More Cell Content 3</td> </tr> <tr> <td>Even More Cell Content 1</td> <td>Even More Cell Content 2</td> <td>Even More Cell Content 3</td> </tr> <tr> <td>And Repeat 1</td> <td>And Repeat 2</td> <td>And Repeat 3</td> </tr> <tr> <td>Cell Content 1</td> <td>Cell Content 2</td> <td>Cell Content 3</td> </tr> <tr> <td>More Cell Content 1</td> <td>More Cell Content 2</td> <td>More Cell Content 3</td> </tr> <tr> <td>Even More Cell Content 1</td> <td>Even More Cell Content 2</td> <td>Even More Cell Content 3</td> </tr> <tr> <td>And Repeat 1</td> <td>And Repeat 2</td> <td>And Repeat 3</td> </tr> <tr> <td>Cell Content 1</td> <td>Cell Content 2</td> <td>Cell Content 3</td> </tr> <tr> <td>More Cell Content 1</td> <td>More Cell Content 2</td> <td>More Cell Content 3</td> </tr> <tr> <td>Even More Cell Content 1</td> <td>Even More Cell Content 2</td> <td>Even More Cell Content 3</td> </tr> <tr> <td>And Repeat 1</td> <td>And Repeat 2</td> <td>And Repeat 3</td> </tr> <tr> <td>Cell Content 1</td> <td>Cell Content 2</td> <td>Cell Content 3</td> </tr> <tr> <td>More Cell Content 1</td> <td>More Cell Content 2</td> <td>More Cell Content 3</td> </tr> <tr> <td>Even More Cell Content 1</td> <td>Even More Cell Content 2</td> <td>Even More Cell Content 3</td> </tr></tbody>
+            </table>
+
+            <br/><br/><br/><br/><br/><br/><br/>
+
+
+            <table class="demo-abs table large template table-bordered table-striped">
+                <caption>Floated using absolute position</caption>
+                <thead> <tr> <th><a href="#" >Header 1</a></th> <th><a href="#" >Header 2</a></th> <th><a href="#" >Header...3</a></th> </tr> </thead>
+                <tbody> <tr> <td>Cell Content 1</td> <td>Cell Content 2</td> <td>Cell Content 3</td> </tr> <tr> <td>More Cell Content 1</td> <td>More Cell Content 2</td> <td>More Cell Content 3</td> </tr> <tr> <td>Even More Cell Content 1</td> <td>Even More Cell Content 2</td> <td>Even More Cell Content 3</td> </tr> <tr> <td>And Repeat 1</td> <td>And Repeat 2</td> <td>And Repeat 3</td> </tr> <tr> <td>Cell Content 1</td> <td>Cell Content 2</td> <td>Cell Content 3</td> </tr> <tr> <td>More Cell Content 1</td> <td>More Cell Content 2</td> <td>More Cell Content 3</td> </tr> <tr> <td>Even More Cell Content 1</td> <td>Even More Cell Content 2</td> <td>Even More Cell Content 3</td> </tr> <tr> <td>And Repeat 1</td> <td>And Repeat 2</td> <td>And Repeat 3</td> </tr> <tr> <td>Cell Content 1</td> <td>Cell Content 2</td> <td>Cell Content 3</td> </tr> <tr> <td>More Cell Content 1</td> <td>More Cell Content 2</td> <td>More Cell Content 3</td> </tr> <tr> <td>Even More Cell Content 1</td> <td>Even More Cell Content 2</td> <td>Even More Cell Content 3</td> </tr> <tr> <td>And Repeat 1</td> <td>And Repeat 2</td> <td>And Repeat 3</td> </tr> <tr> <td>Cell Content 1</td> <td>Cell Content 2</td> <td>Cell Content 3</td> </tr> <tr> <td>More Cell Content 1</td> <td>More Cell Content 2</td> <td>More Cell Content 3</td> </tr> <tr> <td>Even More Cell Content 1</td> <td>Even More Cell Content 2</td> <td>Even More Cell Content 3</td> </tr> <tr> <td>And Repeat 1</td> <td>And Repeat 2</td> <td>And Repeat 3</td> </tr> <tr> <td>Cell Content 1</td> <td>Cell Content 2</td> <td>Cell Content 3</td> </tr> <tr> <td>More Cell Content 1</td> <td>More Cell Content 2</td> <td>More Cell Content 3</td> </tr> <tr> <td>Even More Cell Content 1</td> <td>Even More Cell Content 2</td> <td>Even More Cell Content 3</td> </tr></tbody>
+            </table>
+
+
+            <br/><br/><br/><br/><br/><br/><br/>
+
+            <div class="wrap">
+                <table class="demo-scroll-fixed table large template table-bordered table-striped">
+                    <caption align="bottom">Floated using fixed position</caption>
+                    <thead> <tr> <th><a href="#" >Header 1</a></th> <th><a href="#" >Header 2</a></th> <th><a href="#" >Header...3</a></th> </tr> </thead>
+                    <tbody> <tr> <td>Cell Content 1</td> <td>Cell Content 2</td> <td>Cell Content 3</td> </tr> <tr> <td>More Cell Content 1</td> <td>More Cell Content 2</td> <td>More Cell Content 3</td> </tr> <tr> <td>Even More Cell Content 1</td> <td>Even More Cell Content 2</td> <td>Even More Cell Content 3</td> </tr> <tr> <td>And Repeat 1</td> <td>And Repeat 2</td> <td>And Repeat 3</td> </tr> <tr> <td>Cell Content 1</td> <td>Cell Content 2</td> <td>Cell Content 3</td> </tr> <tr> <td>More Cell Content 1</td> <td>More Cell Content 2</td> <td>More Cell Content 3</td> </tr> <tr> <td>Even More Cell Content 1</td> <td>Even More Cell Content 2</td> <td>Even More Cell Content 3</td> </tr> <tr> <td>And Repeat 1</td> <td>And Repeat 2</td> <td>And Repeat 3</td> </tr> <tr> <td>Cell Content 1</td> <td>Cell Content 2</td> <td>Cell Content 3</td> </tr> <tr> <td>More Cell Content 1</td> <td>More Cell Content 2</td> <td>More Cell Content 3</td> </tr> <tr> <td>Even More Cell Content 1</td> <td>Even More Cell Content 2</td> <td>Even More Cell Content 3</td> </tr> <tr> <td>And Repeat 1</td> <td>And Repeat 2</td> <td>And Repeat 3</td> </tr> <tr> <td>Cell Content 1</td> <td>Cell Content 2</td> <td>Cell Content 3</td> </tr> <tr> <td>More Cell Content 1</td> <td>More Cell Content 2</td> <td>More Cell Content 3</td> </tr> <tr> <td>Even More Cell Content 1</td> <td>Even More Cell Content 2</td> <td>Even More Cell Content 3</td> </tr> <tr> <td>And Repeat 1</td> <td>And Repeat 2</td> <td>And Repeat 3</td> </tr> <tr> <td>Cell Content 1</td> <td>Cell Content 2</td> <td>Cell Content 3</td> </tr> <tr> <td>More Cell Content 1</td> <td>More Cell Content 2</td> <td>More Cell Content 3</td> </tr> <tr> <td>Even More Cell Content 1</td> <td>Even More Cell Content 2</td> <td>Even More Cell Content 3</td> </tr></tbody>
+                </table>
+            </div>
+            <br/><br/><br/><br/>
+            <div class="wrap">
+                <table class="demo-scroll-abs table large template table-bordered table-striped">
+                    <caption align="top">Floated using absolute position</caption>
+                    <thead> <tr> <th><a href="#" >Header 1</a></th> <th><a href="#" >Header 2</a></th> <th><a href="#" >Header...3</a></th> </tr> </thead>
+                    <tbody> <tr> <td>Cell Content 1</td> <td>Cell Content 2</td> <td>Cell Content 3</td> </tr> <tr> <td>More Cell Content 1</td> <td>More Cell Content 2</td> <td>More Cell Content 3</td> </tr> <tr> <td>Even More Cell Content 1</td> <td>Even More Cell Content 2</td> <td>Even More Cell Content 3</td> </tr> <tr> <td>And Repeat 1</td> <td>And Repeat 2</td> <td>And Repeat 3</td> </tr> <tr> <td>Cell Content 1</td> <td>Cell Content 2</td> <td>Cell Content 3</td> </tr> <tr> <td>More Cell Content 1</td> <td>More Cell Content 2</td> <td>More Cell Content 3</td> </tr> <tr> <td>Even More Cell Content 1</td> <td>Even More Cell Content 2</td> <td>Even More Cell Content 3</td> </tr> <tr> <td>And Repeat 1</td> <td>And Repeat 2</td> <td>And Repeat 3</td> </tr> <tr> <td>Cell Content 1</td> <td>Cell Content 2</td> <td>Cell Content 3</td> </tr> <tr> <td>More Cell Content 1</td> <td>More Cell Content 2</td> <td>More Cell Content 3</td> </tr> <tr> <td>Even More Cell Content 1</td> <td>Even More Cell Content 2</td> <td>Even More Cell Content 3</td> </tr> <tr> <td>And Repeat 1</td> <td>And Repeat 2</td> <td>And Repeat 3</td> </tr> <tr> <td>Cell Content 1</td> <td>Cell Content 2</td> <td>Cell Content 3</td> </tr> <tr> <td>More Cell Content 1</td> <td>More Cell Content 2</td> <td>More Cell Content 3</td> </tr> <tr> <td>Even More Cell Content 1</td> <td>Even More Cell Content 2</td> <td>Even More Cell Content 3</td> </tr> <tr> <td>And Repeat 1</td> <td>And Repeat 2</td> <td>And Repeat 3</td> </tr> <tr> <td>Cell Content 1</td> <td>Cell Content 2</td> <td>Cell Content 3</td> </tr> <tr> <td>More Cell Content 1</td> <td>More Cell Content 2</td> <td>More Cell Content 3</td> </tr> <tr> <td>Even More Cell Content 1</td> <td>Even More Cell Content 2</td> <td>Even More Cell Content 3</td> </tr></tbody>
+                </table>
+            </div>
+        </div>
+
+
+    </div>
+    <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+</div>
+
+<script type="text/javascript">
+    $(function(){
+        $('.demo-abs').floatThead({
+            scrollingTop: pageTop,
+            useAbsolutePositioning: true
+        });
+        $('.demo-fixed').floatThead({
+            scrollingTop: pageTop,
+            useAbsolutePositioning: false
+        });
+        $(".demo-scroll-abs").floatThead({
+            scrollingTop: pageTop,
+            useAbsolutePositioning: true,
+            scrollContainer: function($table){
+                return $table.closest('.wrap');
+            }
+        });
+        $(".demo-scroll-fixed").floatThead({
+            scrollingTop: pageTop,
+            useAbsolutePositioning: false,
+            scrollContainer: function($table){
+                return $table.closest('.wrap');
+            }
+        });
+    });
+
+</script>
