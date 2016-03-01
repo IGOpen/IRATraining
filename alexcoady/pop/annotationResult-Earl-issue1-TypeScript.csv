@@ -1,0 +1,2 @@
+Project,Issue,Commit,TypeChecker,Detectable,Comment,AnnotationTime
+alexcoady/pop,1,d6d123abe6b161fc910869b74029cb9ae2a505ef,TypeScript,Undetectable,Replacing a constant with a variable of a compatible type is a logic problem, not one amenable to detection by TS or Flow.,12.0
