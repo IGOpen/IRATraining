@@ -1,3 +1,4 @@
+/* @flow */
 /*!
  * Connect - static
  * Copyright(c) 2010 Sencha Inc.
