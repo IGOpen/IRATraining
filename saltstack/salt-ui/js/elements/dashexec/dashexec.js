@@ -1,3 +1,4 @@
+/* @flow */
 /**
 A custom element that turns carefully crafted form buttons into salt commands
 and renders result into a x-tree tag
@@ -7,6 +8,7 @@ and renders result into a x-tree tag
 
 @event SaltExecution
 **/
+declare var define: any;
 define(function(require) {
     'use strict';
 
