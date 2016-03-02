@@ -1,0 +1,2 @@
+Project,Issue,Commit,TypeChecker,Detectable,Comment,AnnotationTime
+saltstack/salt-ui,30,7488f8e7c97a22580099504e5082b8a6a37153fb,TypeScript,Unknown,As noted under flow, this issue turns on whether or not arg is defined on both xtag and dataset.  If it is, then this is logic error.  If it is not, then this is a type error.  I burned all my time without answering this question.  Here, I was unable to find a DefinitelyTyped interface for xtag or dataset.,0.0
