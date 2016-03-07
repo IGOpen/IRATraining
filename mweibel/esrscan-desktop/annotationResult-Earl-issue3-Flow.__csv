@@ -1,0 +1,2 @@
+Project,Issue,Commit,TypeChecker,Detectable,Comment,AnnotationTime
+mweibel/esrscan-desktop,3,cccee321a07b48640f44be911cb4fe0d2c814a6e,Flow,Unanalysed,Logic error:  see discussion in TypeScript.,61.0

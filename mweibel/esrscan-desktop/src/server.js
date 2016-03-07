@@ -1,3 +1,4 @@
+/* @flow */
 const http = require('http')
 const os = require('os')
 const mdns = require('mdns')
