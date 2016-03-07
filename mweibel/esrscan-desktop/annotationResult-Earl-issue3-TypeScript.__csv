@@ -1,0 +1,3 @@
+Project,Issue,Commit,TypeChecker,Detectable,Comment,AnnotationTime
+mweibel/esrscan-desktop,3,cccee321a07b48640f44be911cb4fe0d2c814a6e,TypeScript,Undetectable,This is an issue with the fact that the constant 0 means all interfaces.  Before the change, the code listened only on the interface bound to the local network via the local address returned by the address() call.  Even if the mdns package defined specific function calls, with distinct signatures, to separate these two cases, this bug is equivalent to choosing the wrong one.
+Taxo:  logic error.,270.0
