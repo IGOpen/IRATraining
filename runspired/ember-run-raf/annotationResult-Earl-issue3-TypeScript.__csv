@@ -1,0 +1,2 @@
+Project,Issue,Commit,TypeChecker,Detectable,Comment,AnnotationTime
+runspired/ember-run-raf,3,bbc6aa5a375b2efe7a601f373861dd2bb1e265df,TypeScript,Unknown,This exceeds my JavaScript knowledge.  I don't understand why one needs to use call and pass in null (which defaults to the global context) here.  Was there always a bug here?  When is a function context available and when not?  And one isn't one available here?  Set to 600.,437.0
