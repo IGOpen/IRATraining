@@ -1,3 +1,4 @@
+/* @flow */
 // based on https://github.com/benediktarnold/owfs
 
 /*jshint latedef:nofunc, white:true, node:true, undef:true, unused:true */

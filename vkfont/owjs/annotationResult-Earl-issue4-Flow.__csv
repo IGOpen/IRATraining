@@ -1,0 +1,2 @@
+Project,Issue,Commit,TypeChecker,Detectable,Comment,AnnotationTime
+vkfont/owjs,4,7dcd4ccec2917b4d6349b1b7bf62a91d5108824a,Flow,Undetectable,The fix does not appear to match the bug report, which suggests that filtering out messages based on a payload of -1 is the solution.  Previously, the code took the first message in the message array, now it takes the last.  So the fix is changing the array handling from FIFO (queue) to LIFO (stack).  This issue is a logic error.,155.0
