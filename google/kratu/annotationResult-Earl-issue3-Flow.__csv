@@ -1,0 +1,2 @@
+Project,Issue,Commit,TypeChecker,Detectable,Comment,AnnotationTime
+google/kratu,3,bc126c1f3a2be18d00392d5830e1a353a496120e,Flow,Unanalysed,Flow detects this error.  This can be viewed as a type error if we define the field access operator as a binary function that cannot take undefined as its object parameter.,119.0
