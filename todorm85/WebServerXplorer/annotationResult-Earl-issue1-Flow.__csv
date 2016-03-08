@@ -1,0 +1,2 @@
+Project,Issue,Commit,TypeChecker,Detectable,Comment,AnnotationTime
+todorm85/WebServerXplorer,1,363aec721d8b70ef7023de713b974d6900cfc813,Flow,Undetectable,Logic error.  In a more powerful typesystem, one with grammar constrained strings, one could define code paths for unregistered users that bound path to a type whose only values start with /public.,139.0
