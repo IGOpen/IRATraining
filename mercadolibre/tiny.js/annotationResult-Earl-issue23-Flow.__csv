@@ -1,0 +1,2 @@
+Project,Issue,Commit,TypeChecker,Detectable,Comment,AnnotationTime
+mercadolibre/tiny.js,23,0c48b70a8f0abeb565335724d8effb2df8c61ca9,Flow,Undetectable,I've thought better of my discussion on the TypeScript version.  Zheng pointed out that the name of the funciton is getElementS, with a terminal s, so returning an empty array is sensical.  Thus, these changes are logic, not type.  The same should be true of the TS version of this issue.,130.0
