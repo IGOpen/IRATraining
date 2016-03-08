@@ -1,0 +1,2 @@
+Project,Issue,Commit,TypeChecker,Detectable,Comment,AnnotationTime
+chimeric/dokuwiki-plugin-wizard,1,217d656aa5673a06e53544310a700dbc8d5f7803,Flow,Unanalysed,Not a JavaScript issue.,0.0
