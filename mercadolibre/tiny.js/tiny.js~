@@ -1,4 +1,3 @@
-// @flow weak
 import clone from './modules/clone';
 import extend from './modules/extend';
 import inherits from './modules/inherits';
