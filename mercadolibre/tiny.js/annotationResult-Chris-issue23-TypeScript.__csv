@@ -1,0 +1,2 @@
+Project,Issue,Commit,TypeChecker,Detectable,Comment,AnnotationTime
+mercadolibre/tiny.js,23,0c48b70a8f0abeb565335724d8effb2df8c61ca9,TypeScript,Unanalysed,This seems like something that could be caught with the type system because they're actually doing lots of tests.  I ran out of time trying to create the right annotation.,0.0
