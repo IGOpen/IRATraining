@@ -1,4 +1,4 @@
-// @flow weak
+// @flow
 import globalScope from './global-scope';
 import nativeSetTimeout from './set-timeout';
 
