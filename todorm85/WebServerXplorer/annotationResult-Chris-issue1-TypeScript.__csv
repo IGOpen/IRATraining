@@ -1,0 +1,2 @@
+Project,Issue,Commit,TypeChecker,Detectable,Comment,AnnotationTime
+todorm85/WebServerXplorer,1,363aec721d8b70ef7023de713b974d6900cfc813,TypeScript,Undetectable,This is adding guards to non-public paths so that non-authenticated users can access restricted paths.  Not a type error caught by typescript or flow.,0.0
