@@ -1,0 +1,2 @@
+Project,Issue,Commit,TypeChecker,Detectable,Comment,AnnotationTime
+saltstack/salt-ui,30,7488f8e7c97a22580099504e5082b8a6a37153fb,TypeScript,Detectable,This is a careless programmer error that would have been caught by a type system.  I don't know how to add the correct annotations to "this", but the definitelytyped .d.ts file for xtag shows that there is no arg field so this would cause a type error.,328.0
