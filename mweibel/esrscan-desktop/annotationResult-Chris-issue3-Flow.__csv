@@ -1,0 +1,2 @@
+Project,Issue,Commit,TypeChecker,Detectable,Comment,AnnotationTime
+mweibel/esrscan-desktop,3,cccee321a07b48640f44be911cb4fe0d2c814a6e,Flow,Undetectable,This is just changing the options to the mdns.createAdvertisement.  Per http://agnat.github.io/node_mdns/user_guide.html#advertisement, both networkInterface and interfaceIndex are potential fields in the options passed in, though interfaceIndex is deprecated.  Since the change is TO interfaceIndex and not FROM it, a type system couldn't possibly catch this.,4.0
