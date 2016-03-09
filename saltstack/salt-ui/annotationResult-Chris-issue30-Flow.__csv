@@ -1,0 +1,2 @@
+Project,Issue,Commit,TypeChecker,Detectable,Comment,AnnotationTime
+saltstack/salt-ui,30,7488f8e7c97a22580099504e5082b8a6a37153fb,Flow,Detectable,This is a careless programmer error that would have been caught by a type system.  I don't know how to add the correct annotations to "this", but the type definitions for xtag show no "arg" field so if I could find right way to annotate this, Flow would indeed catch it.,67.0
