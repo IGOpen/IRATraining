@@ -1,0 +1,2 @@
+Project,Issue,Commit,TypeChecker,Detectable,Comment,AnnotationTime
+runspired/ember-run-raf,3,bbc6aa5a375b2efe7a601f373861dd2bb1e265df,TypeScript,Unknown,This was complicated.  I don't fully understand the different semantics of calling javascript functions and the ways that nativeSetTimeout comes into existence is difficult to follow.,0.0
