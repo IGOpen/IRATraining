@@ -1,0 +1,2 @@
+Project,Issue,Commit,TypeChecker,Detectable,Comment,AnnotationTime
+Rich-Harris/sorcery,3,17be48c56ccb676b417235a59a0f9fcb60a23bdc,TypeScript,Unanalysed,This is just a logic change about how paths are split up.  TypeScript would not catch this.,20.0
