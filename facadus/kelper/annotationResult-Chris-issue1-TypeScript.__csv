@@ -1,0 +1,2 @@
+Project,Issue,Commit,TypeChecker,Detectable,Comment,AnnotationTime
+facadus/kelper,1,b262d0ba0dfd54511752bb319a81668a47ce14d9,TypeScript,Undetectable,adding a logic check.  taxonomy is missing predicates ,0.0
