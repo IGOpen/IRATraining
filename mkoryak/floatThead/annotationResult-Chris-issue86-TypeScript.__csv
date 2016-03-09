@@ -1,0 +1,2 @@
+Project,Issue,Commit,TypeChecker,Detectable,Comment,AnnotationTime
+mkoryak/floatThead,86,7b43accf40bf328bec7268366fd9197651156a60,TypeScript,Undetectable,the fix is just changing a string.  not detectable.  And those are some big files that strained the annotation facilitator.,0.0
