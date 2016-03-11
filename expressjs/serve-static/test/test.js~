@@ -1,4 +1,4 @@
-// @flow
+
 process.env.NODE_ENV = 'test';
 
 var connect = require('connect');
